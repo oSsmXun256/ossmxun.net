@@ -1,2 +1,1 @@
-# webpage
-https://ossmxun.net/
+# https://ossmxun.net/
