@@ -1,33 +1,32 @@
 /*!
- * aqua.design.css v1.3.0
+ * aqua.design.css v1.4.1
  * Liquid Glass Design System - Core Design Components
  * デザイン要素とコンポーネントの定義
+ *
+ * カラーバリアントのクラス名修正
+ *
+ * Copyright (c) 2026 oSsmXun Design, All rights reserved.
+ * Please read the project page: https://ossmxun.net/aqua-design
  */
 
-/* ========================================================================== 
+/* ==========================================================================
    CSS VARIABLES & THEME SYSTEM
    ========================================================================== */
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
 
 :root {
     /* Primary Color System (default = blue) */
     --aqua-primary: #4e70df;
     --aqua-primary-light: #6b8aff;
     --aqua-primary-dark: #3355cc;
-    
-    /* Text Colors */
+    --aqua-grad-1: #667eea;
+    --aqua-grad-2: #9f85d6;
+    --aqua-grad-3: #8bb9ff;
     --aqua-text-primary: #17335e;
     --aqua-text-secondary: #ffffff;
+    
+    /* Text Colors */
     --aqua-text-muted: rgba(255, 255, 255, 0.7);
-    --aqua-text-muted-black: rgba(0, 0, 0, 0.6);
     --aqua-text-inverse: #2c3e50;
-
-    /* Normal Text Colors */
-    --aqua-text-white: #ffffff;
-    --aqua-text-black: #333333;
     
     /* Glass Effect Variables */
     --aqua-glass-bg: rgba(255, 255, 255, 0.15);
@@ -35,17 +34,14 @@
     --aqua-glass-bg-dark: rgba(0, 0, 0, 0.15);
     --aqua-glass-border: rgba(255, 255, 255, 0.8);
     --aqua-glass-border-light: rgba(255, 255, 255, 0.9);
-    --aqua-glass-border-dark: rgba(83, 83, 83, 0.6);
+    --aqua-glass-border-dark: rgba(255, 255, 255, 0.6);
     --aqua-glass-shadow-primary: rgba(31, 38, 135, 0.2);
     --aqua-glass-shadow-secondary: rgba(255, 255, 255, 0.3);
     --aqua-glass-after-bg: rgba(255, 255, 255, 0.1);
     
     /* Background Gradients */
-    --aqua-gradient-primary: linear-gradient(135deg, #667eea, #9f85d6);
-    --aqua-gradient-secondary: linear-gradient(135deg, #8bb9ff, #a6c1ee);
-    --aqua-grad-1: #667eea;
-    --aqua-grad-2: #764ba2;
-    --aqua-grad-3: #8bb9ff;
+    --aqua-gradient-primary: linear-gradient(135deg, var(--aqua-grad-1), var(--aqua-grad-2));
+    --aqua-gradient-secondary: linear-gradient(135deg, var(--aqua-grad-2), var(--aqua-grad-3));
     
     /* Typography */
     --aqua-font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -94,15 +90,14 @@
     --aqua-blur-md: blur(8px);
     --aqua-blur-lg: blur(16px);
     --aqua-blur-xl: blur(24px);
+
 }
 
-/* ========================================================================== 
+/* ==========================================================================
    THEME VARIATIONS
    ========================================================================== */
 
-/* テーマが適用されていない場合のデフォルトスタイル */
 .aqua-reset {
-    color: var(--aqua-text-secondary);
     font-family: var(--aqua-font-family);
     line-height: 1.6;
     color: var(--aqua-text-secondary);
@@ -110,112 +105,147 @@
     min-height: 100vh;
 }
 
-/* デフォルトテーマ */
 .aqua-theme-default {
-    --aqua-primary-bg: #4e70df;
+    --aqua-primary: #4e70df;
+    --aqua-primary-light: #6b8aff;
+    --aqua-primary-dark: #3355cc;
+    --aqua-grad-1: #667eea;
+    --aqua-grad-2: #9f85d6;
+    --aqua-grad-3: #8bb9ff;
     --aqua-text-primary: #17335e;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #667eea;
-    --aqua-grad-2: #764ba2;
 }
 
 .aqua-theme-red {
-    --aqua-primary-bg: #f28b82;
+    --aqua-primary-light: #fc8181;
+    --aqua-primary-dark: #b91c1c;
+    --aqua-grad-1: #f56565;
+    --aqua-grad-2: #ed64a6;
+    --aqua-grad-3: #feb47b;
     --aqua-text-primary: #5a2b2b;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #ff8a7e;
-    --aqua-grad-2: #ff6262;
 }
 
 .aqua-theme-green {
-    --aqua-primary-bg: #80cfa9;
+    --aqua-primary: #38a169;
+    --aqua-primary-light: #68d391;
+    --aqua-primary-dark: #276749;
+    --aqua-grad-1: #0ba360;
+    --aqua-grad-2: #3cba92;
+    --aqua-grad-3: #b7f8db;
     --aqua-text-primary: #1f4037;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #56ab8d;
-    --aqua-grad-2: #388e79;
 }
 
 .aqua-theme-purple {
-    --aqua-primary-bg: #9d4edd;
+    --aqua-primary: #805ad5;
+    --aqua-primary-light: #b794f4;
+    --aqua-primary-dark: #553c9a;
     --aqua-text-primary: #3d0f5e;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #b388eb;
-    --aqua-grad-2: #8e44ad;
 }
 
 .aqua-theme-orange {
-    --aqua-primary-bg: #ffb47b;
+--aqua-primary: #ed8936;
+    --aqua-primary-light: #f6ad55;
+    --aqua-primary-dark: #c05621;
+    --aqua-grad-1: #f6d365;
+    --aqua-grad-2: #fda085;
+    --aqua-grad-3: #fccb90;
     --aqua-text-primary: #5a3c24;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #ff8c42;
-    --aqua-grad-2: #ff6700;
 }
 
 .aqua-theme-cyan {
-    --aqua-primary-bg: #06d6a0;
+    --aqua-primary: #00b5ad;
+    --aqua-primary-light: #33c9c2;
+    --aqua-primary-dark: #00827c;
+    --aqua-grad-1: #2af598;
+    --aqua-grad-2: #009efd;
+    --aqua-grad-3: #70e1f5;
     --aqua-text-primary: #023020;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #118ab2;
-    --aqua-grad-2: #06ffa5;
 }
 
 .aqua-theme-black {
-    --aqua-primary-bg: #2d3436;
+    --aqua-primary: #2d3748;
+    --aqua-primary-light: #4a5568;
+    --aqua-primary-dark: #1a202c;
+    --aqua-grad-1: #2c3e50;
+    --aqua-grad-2: #000000;
+    --aqua-grad-3: #434343;
     --aqua-text-primary: #ddd;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #636e72;
-    --aqua-grad-2: #2d3436;
 }
 
 .aqua-theme-pink {
-    --aqua-primary-bg: #f7a8b8;
+    --aqua-primary: #d53f8c;
+    --aqua-primary-light: #f687b3;
+    --aqua-primary-dark: #97266d;
+    --aqua-grad-1: #ff9a9e;
+    --aqua-grad-2: #fecfef;
+    --aqua-grad-3: #fbc2eb;
     --aqua-text-primary: #5a2b3c;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #ff8fab;
-    --aqua-grad-2: #fb6f92;
 }
 
 .aqua-theme-sky {
-    --aqua-primary-bg: #87ceeb;
+    --aqua-primary: #3182ce;
+    --aqua-primary-light: #63b3ed;
+    --aqua-primary-dark: #2b6cb0;
+    --aqua-grad-1: #a1c4fd;
+    --aqua-grad-2: #c2e9fb;
+    --aqua-grad-3: #e1f5fe;
     --aqua-text-primary: #2a3d5e;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #64b5f6;
-    --aqua-grad-2: #42a5f5;
 }
 
 .aqua-theme-lavender {
-    --aqua-primary-bg: #c5a6e5;
+    --aqua-primary: #9f7aea;
+    --aqua-primary-light: #d6bcfa;
+    --aqua-primary-dark: #6b46c1;
+    --aqua-grad-1: #e0c3fc;
+    --aqua-grad-2: #8ec5fc;
+    --aqua-grad-3: #d1d9ff;
     --aqua-text-primary: #3e2b5e;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #ba9ddf;
-    --aqua-grad-2: #ab82d1;
 }
 
 .aqua-theme-mint {
-    --aqua-primary-bg: #a8e6cf;
+    --aqua-primary: #4fd1c5;
+    --aqua-primary-light: #81e6d9;
+    --aqua-primary-dark: #2c7a7b;
+    --aqua-grad-1: #00f2fe;
+    --aqua-grad-2: #4facfe;
+    --aqua-grad-3: #c2ffd8;
     --aqua-text-primary: #20493a;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #7fcdb5;
-    --aqua-grad-2: #60bca3;
 }
 
 .aqua-theme-sand {
-    --aqua-primary-bg: #f6d6a8;
+    --aqua-primary: #d69e2e;
+    --aqua-primary-light: #ecc94b;
+    --aqua-primary-dark: #b7791f;
+    --aqua-grad-1: #f6d365;
+    --aqua-grad-2: #f83600;
+    --aqua-grad-3: #ffd194;
     --aqua-text-primary: #5a4630;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #eacda3;
-    --aqua-grad-2: #d6ae7b;
 }
 
 .aqua-theme-slate {
-    --aqua-primary-bg: #95a5a6;
+    --aqua-primary: #718096;
+    --aqua-primary-light: #a0aec0;
+    --aqua-primary-dark: #2d3748;
+    --aqua-grad-1: #bdc3c7;
+    --aqua-grad-2: #2c3e50;
+    --aqua-grad-3: #7f8c8d;
     --aqua-text-primary: #2c3e50;
     --aqua-text-secondary: #ffffff;
-    --aqua-grad-1: #8395a7;
-    --aqua-grad-2: #708090;
+
 }
 
-/* ========================================================================== 
+/* ==========================================================================
    LIQUID GLASS EFFECTS
    ========================================================================== */
 
@@ -253,148 +283,95 @@
     box-shadow: var(--aqua-shadow-glass-hover);
 }
 
+/* ==========================================================================
+   [v1.4.0 NEW] 角の形状切り替えクラス
+   
+   デフォルト: 角丸 (border-radius: var(--aqua-radius-lg))
+   
+   .aqua-glass-square  → 角を角ばった状態に (border-radius: 0)
+   .aqua-glass-rounded → 明示的に角丸を指定したい場合（デフォルトと同じ効果）
+   
+   使用例:
+     <div class="aqua-glass">角丸（デフォルト）</div>
+     <div class="aqua-glass aqua-glass-square">角ばった状態</div>
+   ========================================================================== */
+
+.aqua-glass-square {
+    border-radius: 0 !important;
+}
+
+.aqua-glass-rounded {
+    border-radius: var(--aqua-radius-lg) !important;
+}
+
 /* Glass Variants */
 .aqua-glass-light { 
     background: var(--aqua-glass-bg-light); 
-
-    position: relative;
-    backdrop-filter: var(--aqua-blur-md) saturate(180%);
-    border: 1px solid var(--aqua-glass-border-light);
-    border-radius: var(--aqua-radius-lg);
-    box-shadow: var(--aqua-shadow-glass), 
-                inset 0 4px 20px var(--aqua-glass-shadow-secondary);
-    transition: all var(--aqua-transition-base);
-}
-
-.aqua-glass-light::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--aqua-glass-after-bg);
-    border-radius: inherit;
-    backdrop-filter: var(--aqua-blur-sm);
-    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
-                inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
-    opacity: 0.6;
-    z-index: -1;
-    filter: var(--aqua-blur-sm) drop-shadow(10px 4px 6px black) brightness(115%);
-    pointer-events: none;
-}
-
-.aqua-glass-light:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--aqua-shadow-glass-hover);
+    border-color: var(--aqua-glass-border-light);
 }
 
 .aqua-glass-dark { 
     background: var(--aqua-glass-bg-dark); 
-
-    position: relative;
-    backdrop-filter: var(--aqua-blur-md) saturate(180%);
-    border: 1px solid var(--aqua-glass-border-dark);
-    border-radius: var(--aqua-radius-lg);
-    box-shadow: var(--aqua-shadow-glass), 
-                inset 0 4px 20px var(--aqua-glass-shadow-secondary);
-    transition: all var(--aqua-transition-base);
-}
-
-.aqua-glass-dark::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--aqua-glass-after-bg);
-    border-radius: inherit;
-    backdrop-filter: var(--aqua-blur-sm);
-    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
-                inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
-    opacity: 0.6;
-    z-index: -1;
-    filter: var(--aqua-blur-sm) drop-shadow(10px 4px 6px black) brightness(115%);
-    pointer-events: none;
-}
-
-.aqua-glass-dark:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--aqua-shadow-glass-hover);
+    border-color: var(--aqua-glass-border-dark);
 }
 
 .aqua-glass-colored { 
     background: rgba(78, 112, 223, 0.15); 
-
-    position: relative;
-    backdrop-filter: var(--aqua-blur-md) saturate(180%);
-    border: 1px solid rgba(78, 112, 223, 0.8);
-    border-radius: var(--aqua-radius-lg);
-    box-shadow: var(--aqua-shadow-glass), 
-                inset 0 4px 20px var(--aqua-glass-shadow-secondary);
-    transition: all var(--aqua-transition-base);
-}
-
-.aqua-glass-colored::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--aqua-glass-after-bg);
-    border-radius: inherit;
-    backdrop-filter: var(--aqua-blur-sm);
-    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
-                inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
-    opacity: 0.6;
-    z-index: -1;
-    filter: var(--aqua-blur-sm) drop-shadow(10px 4px 6px black) brightness(115%);
-    pointer-events: none;
-}
-
-.aqua-glass-colored:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--aqua-shadow-glass-hover);
+    border-color: rgba(78, 112, 223, 0.8);
 }
 
 .aqua-glass-frosted {
     backdrop-filter: var(--aqua-blur-lg) saturate(200%);
     background: rgba(255, 255, 255, 0.1);
-
-    position: relative;
-    border: 1px solid var(--aqua-glass-border);
-    border-radius: var(--aqua-radius-lg);
-    box-shadow: var(--aqua-shadow-glass), 
-                inset 0 4px 20px var(--aqua-glass-shadow-secondary);
-    transition: all var(--aqua-transition-base);
 }
 
-.aqua-glass-frosted::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--aqua-glass-after-bg);
-    border-radius: inherit;
-    backdrop-filter: var(--aqua-blur-sm);
-    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
-                inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
-    opacity: 0.6;
-    z-index: -1;
-    filter: var(--aqua-blur-sm) drop-shadow(10px 4px 6px black) brightness(115%);
-    pointer-events: none;
+/* ==========================================================================
+   [v1.4.0 NEW] テキスト影 — クラス不要で自動付与
+   .aqua-glass 内の全テキストに text-shadow を自動適用。
+   デフォルト（白文字想定）→ 暗い影
+   .aqua-text-black / .aqua-text-primary など暗い文字色 → 明るい影
+   ========================================================================== */
+
+/* デフォルト: 白文字用の暗い影 */
+.aqua-glass,
+.aqua-glass * {
+    text-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.4),
+        0 1px 6px rgba(0, 0, 0, 0.2);
 }
 
-.aqua-glass-frosted:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--aqua-shadow-glass-hover);
+/* 見出し要素は影を少し強く */
+.aqua-glass h1,
+.aqua-glass h2,
+.aqua-glass h3,
+.aqua-glass h4,
+.aqua-glass h5,
+.aqua-glass h6 {
+    text-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.5),
+        0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-/* ========================================================================== 
+/* 黒/暗い文字が使われている場合は明るい影に切り替え */
+.aqua-glass .aqua-text-black,
+.aqua-glass .aqua-text-primary,
+.aqua-glass [class*="aqua-text-gray"],
+.aqua-glass [style*="color: #0"],
+.aqua-glass [style*="color: rgb(0"],
+.aqua-glass [style*="color: black"] {
+    text-shadow:
+        0 1px 3px rgba(255, 255, 255, 0.7),
+        0 1px 6px rgba(255, 255, 255, 0.3);
+}
+
+/* 影が不要なケース: アイコン・装飾系は除外 */
+.aqua-glass .aqua-no-text-shadow,
+.aqua-glass svg,
+.aqua-glass img {
+    text-shadow: none !important;
+}
+
+/* ==========================================================================
    BACKGROUND SYSTEM
    ========================================================================== */
 
@@ -419,7 +396,7 @@
     100% { background-position: 0% 50%; }
 }
 
-/* ========================================================================== 
+/* ==========================================================================
    COMPONENT STYLES
    ========================================================================== */
 
@@ -449,64 +426,64 @@
     border-color: var(--aqua-primary);
 }
 
-/* 基本 */
+/* Button Base */
 .aqua-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    border-radius: 9999px;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: all var(--aqua-transition-base);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.3);
     min-width: 140px;
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: var(--aqua-text-secondary);
+    font-family: var(--aqua-font-family);
 }
 
 .aqua-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
-.aqua-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.aqua-btn-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+    color: #fff;
 }
 
-.aqua-btn-primary { background: linear-gradient(135deg, var(--aqua-grad-1), var(--aqua-grad-2));
-    border: 1px solid rgba(255,255,255,.3);
-}
 .aqua-btn-primary:hover {
-    border-color: rgba(255,255,255,.7);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .aqua-btn-secondary {
-    background: rgba(255,255,255,.2);
-    border: 1px solid rgba(255,255,255,.3);
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 .aqua-btn-secondary:hover {
-    border-color: rgba(255,255,255,.7);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .aqua-btn-outline {
     background: transparent;
-    border: 1px solid rgba(255,255,255,.3);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 .aqua-btn-outline:hover {
-    background: rgba(255,255,255,.15);
-    border-color: rgba(255,255,255,.7);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .aqua-btn-ghost {
     background: transparent;
     border: none;
-    box-shadow: none;
 }
 
 .aqua-btn-glass {
@@ -532,6 +509,16 @@
     box-shadow: var(--aqua-shadow-glass-hover);
 }
 
+.aqua-card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.aqua-card-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+}
+
 /* Form Elements */
 .aqua-input,
 .aqua-textarea,
@@ -544,7 +531,7 @@
     font-family: var(--aqua-font-family);
     font-size: 1rem;
     transition: all var(--aqua-transition-base);
-    width: calc(99% - 0.74rem * 2);
+    width: 100%;
 }
 
 .aqua-input:focus,
@@ -657,6 +644,7 @@
 }
 
 .aqua-modal-title {
+    color: var(--aqua-text-secondary);
     font-size: 1.5rem;
     font-weight: 600;
     margin: 0;
@@ -703,7 +691,7 @@
     border-bottom: none;
 }
 
-/* ========================================================================== 
+/* ==========================================================================
    TYPOGRAPHY SYSTEM
    ========================================================================== */
 
@@ -713,33 +701,16 @@
     line-height: 1.2;
     color: var(--aqua-text-secondary);
     margin-bottom: var(--aqua-space-4);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .aqua-text {
     font-family: var(--aqua-font-family);
     line-height: 1.6;
     color: var(--aqua-text-secondary);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-}
-
-.text-black {
-    color: var(--aqua-text-black);
-    text-shadow: 0.5px 0px 3.5px rgba(255, 255, 255, 0.8);
-}
-.text-white {
-    color: var(--aqua-text-white); 
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .aqua-text-muted {
     color: var(--aqua-text-muted);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-}
-
-.aqua-text-muted-black {
-    color: var(--aqua-text-muted-black);
-    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.8);
 }
 
 .aqua-text-inverse {
@@ -754,7 +725,7 @@
     font-size: 0.875em;
 }
 
-/* ========================================================================== 
+/* ==========================================================================
    LOADING & ANIMATION COMPONENTS
    ========================================================================== */
 
@@ -786,7 +757,7 @@
     }
 }
 
-/* ========================================================================== 
+/* ==========================================================================
    ACCESSIBILITY & FOCUS STATES
    ========================================================================== */
 
@@ -807,7 +778,7 @@
     border: 0;
 }
 
-/* ========================================================================== 
+/* ==========================================================================
    RESET & BASE STYLES
    ========================================================================== */
 
@@ -817,7 +788,6 @@
     color: var(--aqua-text-secondary);
     background: var(--aqua-gradient-primary);
     min-height: 100vh;
-    margin: 0;
 }
 
 .aqua-reset a {
@@ -839,7 +809,7 @@
     font-size: inherit;
 }
 
-/* ========================================================================== 
+/* ==========================================================================
    PRINT STYLES
    ========================================================================== */
 
