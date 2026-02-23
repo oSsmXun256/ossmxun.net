@@ -1,7 +1,12 @@
 /*!
- * aqua.style.css v1.4.0 (v1.3.0と同じ)
+ * aqua.style.css v1.4.2
  * Liquid Glass Design System - Layout & Utility Classes
  * 配置、レイアウト、ユーティリティクラスの定義
+ *
+ * コンテナのbox-sizingを追加、スマホではみ出さないように変更
+ *
+ * Copyright (c) 2026 oSsmXun Design, All rights reserved.
+ * Please read the project page: https://ossmxun.net/aqua-design
  */
 
 
@@ -11,6 +16,7 @@
 
 .aqua-container {
     width: 100%;
+    box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
