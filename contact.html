@@ -8,10 +8,18 @@
     <link rel="stylesheet" href="aqua.design.css">
     <link rel="stylesheet" href="aqua.style.css">
     <link rel="stylesheet" href="aqua.color.css">
+    <link rel="stylesheet" href="aqua.mobile.css">
 
     <link rel="icon" type="image/webp" href="./img/aikon.w/n_ossm_nc.webp">
 </head>
 <body class="aqua-reset aqua-theme-default aqua-flex aqua-flex-col aqua-items-center aqua-min-h-screen aqua-py-8" style="padding-bottom: 0rem !important;">
+
+    <div class="aqua-fixed aqua-top-4 aqua-right-4 aqua-z-50">
+        <button data-aqua-dark-toggle class="aqua-btn aqua-btn-glass" style="padding: 0.35rem 0.8rem; min-width: auto; font-size: 0.8rem; border-radius: 999px;">
+            <span class="aqua-dark-icon-sun">🌙 Dark</span>
+            <span class="aqua-dark-icon-moon">☀️ Light</span>
+        </button>
+    </div>
 
     <header class="aqua-container aqua-max-w-3xl aqua-w-full aqua-mb-12 aqua-px-4">
         <div class="aqua-glass aqua-p-8 aqua-flex aqua-flex-col aqua-md:aqua-flex-row aqua-items-center aqua-justify-center aqua-gap-8 aqua-text-center aqua-md:aqua-text-left">
@@ -81,5 +89,6 @@
         <img src="./img/original/bottom.png" alt="Footer Image" class="aqua-w-full aqua-h-auto" style="display: block;">
     </footer>
 
+    <script src="aqua.dark.js"></script>
 </body>
 </html>

@@ -1,9 +1,5 @@
 /*!
- * aqua.design.css v1.4.2 (v1.4.1からの変更なし)
- * Liquid Glass Design System - Core Design Components
- * デザイン要素とコンポーネントの定義
- *
- * カラーバリアントのクラス名修正
+ * aqua.design.css V1.5.0
  *
  * Copyright (c) 2026 oSsmXun Design, All rights reserved.
  * Please read the project page: https://ossmxun.net/aqua-design
@@ -35,7 +31,7 @@
     --aqua-glass-border: rgba(255, 255, 255, 0.8);
     --aqua-glass-border-light: rgba(255, 255, 255, 0.9);
     --aqua-glass-border-dark: rgba(255, 255, 255, 0.6);
-    --aqua-glass-shadow-primary: rgba(31, 38, 135, 0.2);
+    --aqua-glass-shadow-primary: rgba(0, 0, 0, 0.35);
     --aqua-glass-shadow-secondary: rgba(255, 255, 255, 0.3);
     --aqua-glass-after-bg: rgba(255, 255, 255, 0.1);
     
@@ -48,8 +44,8 @@
     --aqua-font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
     
     /* Shadows */
-    --aqua-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --aqua-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --aqua-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --aqua-shadow-md: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
     --aqua-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --aqua-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     --aqua-shadow-glass: 0 8px 32px var(--aqua-glass-shadow-primary);
@@ -146,7 +142,7 @@
 }
 
 .aqua-theme-orange {
---aqua-primary: #ed8936;
+    --aqua-primary: #ed8936;
     --aqua-primary-light: #f6ad55;
     --aqua-primary-dark: #c05621;
     --aqua-grad-1: #f6d365;
@@ -279,7 +275,6 @@
 }
 
 .aqua-glass:hover {
-    transform: translateY(-2px);
     box-shadow: var(--aqua-shadow-glass-hover);
 }
 
@@ -446,7 +441,6 @@
 }
 
 .aqua-btn:hover {
-    transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
@@ -505,7 +499,6 @@
 }
 
 .aqua-card:hover {
-    transform: translateY(-4px);
     box-shadow: var(--aqua-shadow-glass-hover);
 }
 
@@ -590,7 +583,6 @@
 
 .aqua-nav-link:hover {
     background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-1px);
 }
 
 .aqua-nav-link.active {
@@ -684,7 +676,6 @@
 
 .aqua-list-item:hover {
     background: rgba(255, 255, 255, 0.05);
-    transform: translateX(4px);
 }
 
 .aqua-list-item:last-child {
@@ -838,4 +829,223 @@
         position: static !important;
         background: none !important;
     }
+}
+
+/* ==========================================================================
+   [v1.4.4 NEW] SLIDE BUTTON / TOGGLE SWITCH
+   スライドボタン（トグルスイッチ）コンポーネント
+   
+   使用例:
+     <label class="aqua-slide">
+       <input type="checkbox" class="aqua-slide-input">
+       <span class="aqua-slide-track">
+         <span class="aqua-slide-thumb"></span>
+       </span>
+       <span class="aqua-slide-label">Toggle me</span>
+     </label>
+   
+   サイズバリアント: .aqua-slide-sm / .aqua-slide-lg
+   カラーバリアント: .aqua-slide-success / .aqua-slide-warning / .aqua-slide-error
+   ========================================================================== */
+
+/* --- ラッパー --- */
+.aqua-slide {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--aqua-space-3);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.aqua-slide-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* ON 状態の left 座標の計算式を修正（トラック幅 - サム幅 - 余白） */
+.aqua-slide-input:checked + .aqua-slide-track .aqua-slide-thumb {
+    left: calc(100% - 1.4rem - 0.25rem); /* 端からの距離をオフ時と完全に対称に */
+    background: rgba(255, 255, 255, 1);
+    box-shadow:
+        0 3px 10px rgba(78, 112, 223, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* サイズバリアント: sm の修正 */
+.aqua-slide-sm .aqua-slide-input:checked + .aqua-slide-track .aqua-slide-thumb {
+    left: calc(100% - 1.05rem - 0.2rem);
+}
+
+/* サイズバリアント: lg の修正 */
+.aqua-slide-lg .aqua-slide-input:checked + .aqua-slide-track .aqua-slide-thumb {
+    left: calc(100% - 2.05rem - 0.3rem);
+}
+
+/* --- トラック（背景部分） --- */
+.aqua-slide-track {
+    position: relative;
+    display: inline-block;
+    width: 3.5rem;
+    height: 2rem;
+    border-radius: var(--aqua-radius-xl);
+    background: var(--aqua-glass-bg-dark);
+    backdrop-filter: var(--aqua-blur-md) saturate(180%);
+    border: 1px solid var(--aqua-glass-border-dark);
+    box-shadow: 
+        var(--aqua-shadow-glass),
+        inset 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: all var(--aqua-transition-base);
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+/* --- サム（動く丸部分） --- */
+.aqua-slide-thumb {
+    position: absolute;
+    top: 50%;
+    left: 0.25rem;
+    transform: translateY(-50%);
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: var(--aqua-blur-sm);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    transition: all var(--aqua-transition-base);
+    box-sizing: border-box;
+}
+
+/* --- ラベル --- */
+.aqua-slide-label {
+    color: var(--aqua-text-secondary);
+    font-family: var(--aqua-font-family);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.4),
+        0 1px 6px rgba(0, 0, 0, 0.2);
+    transition: color var(--aqua-transition-base);
+}
+
+/* --- ON 状態 --- */
+.aqua-slide-input:checked + .aqua-slide-track {
+    background: linear-gradient(135deg,
+        var(--aqua-primary-light, #6b8aff),
+        var(--aqua-primary, #4e70df));
+    border-color: var(--aqua-primary-light, rgba(107, 138, 255, 0.8));
+    box-shadow:
+        0 0 16px rgba(78, 112, 223, 0.45),
+        inset 0 2px 8px rgba(78, 112, 223, 0.2);
+}
+
+.aqua-slide-input:checked + .aqua-slide-track .aqua-slide-thumb {
+    left: calc(100% - 1.65rem);
+    background: rgba(255, 255, 255, 1);
+    box-shadow:
+        0 3px 10px rgba(78, 112, 223, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* --- ホバー --- */
+.aqua-slide:hover .aqua-slide-track {
+    border-color: var(--aqua-glass-border);
+    transform: none;
+}
+
+.aqua-slide:hover .aqua-slide-thumb {
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.35),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* --- フォーカス --- */
+.aqua-slide-input:focus-visible + .aqua-slide-track {
+    outline: 2px solid var(--aqua-primary);
+    outline-offset: 2px;
+}
+
+/* --- 無効状態 --- */
+.aqua-slide-input:disabled + .aqua-slide-track {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+.aqua-slide:has(.aqua-slide-input:disabled) {
+    cursor: not-allowed;
+}
+
+/* --- サイズバリアント: sm --- */
+.aqua-slide-sm .aqua-slide-track {
+    width: 2.75rem;
+    height: 1.5rem;
+}
+.aqua-slide-sm .aqua-slide-thumb {
+    width: 1.05rem;
+    height: 1.05rem;
+    left: 0.2rem;
+}
+.aqua-slide-sm .aqua-slide-input:checked + .aqua-slide-track .aqua-slide-thumb {
+    left: calc(100% - 1.25rem);
+}
+.aqua-slide-sm .aqua-slide-label {
+    font-size: 0.825rem;
+}
+
+/* --- サイズバリアント: lg --- */
+.aqua-slide-lg .aqua-slide-track {
+    width: 4.75rem;
+    height: 2.75rem;
+}
+.aqua-slide-lg .aqua-slide-thumb {
+    width: 2.05rem;
+    height: 2.05rem;
+    left: 0.3rem;
+}
+.aqua-slide-lg .aqua-slide-input:checked + .aqua-slide-track .aqua-slide-thumb {
+    left: calc(100% - 2.35rem);
+}
+.aqua-slide-lg .aqua-slide-label {
+    font-size: 1.1rem;
+}
+
+/* --- カラーバリアント: success --- */
+.aqua-slide-success .aqua-slide-input:checked + .aqua-slide-track {
+    background: linear-gradient(135deg, #68d391, #38a169);
+    border-color: rgba(104, 211, 145, 0.8);
+    box-shadow: 0 0 16px rgba(56, 161, 105, 0.45),
+                inset 0 2px 8px rgba(56, 161, 105, 0.2);
+}
+.aqua-slide-success .aqua-slide-input:checked + .aqua-slide-track .aqua-slide-thumb {
+    box-shadow: 0 3px 10px rgba(56, 161, 105, 0.5),
+                inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* --- カラーバリアント: warning --- */
+.aqua-slide-warning .aqua-slide-input:checked + .aqua-slide-track {
+    background: linear-gradient(135deg, #f6e05e, #d69e2e);
+    border-color: rgba(246, 224, 94, 0.8);
+    box-shadow: 0 0 16px rgba(214, 158, 46, 0.45),
+                inset 0 2px 8px rgba(214, 158, 46, 0.2);
+}
+.aqua-slide-warning .aqua-slide-input:checked + .aqua-slide-track .aqua-slide-thumb {
+    box-shadow: 0 3px 10px rgba(214, 158, 46, 0.5),
+                inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* --- カラーバリアント: error --- */
+.aqua-slide-error .aqua-slide-input:checked + .aqua-slide-track {
+    background: linear-gradient(135deg, #fc8181, #e53e3e);
+    border-color: rgba(252, 129, 129, 0.8);
+    box-shadow: 0 0 16px rgba(229, 62, 62, 0.45),
+                inset 0 2px 8px rgba(229, 62, 62, 0.2);
+}
+.aqua-slide-error .aqua-slide-input:checked + .aqua-slide-track .aqua-slide-thumb {
+    box-shadow: 0 3px 10px rgba(229, 62, 62, 0.5),
+                inset 0 1px 2px rgba(255, 255, 255, 0.9);
 }
