@@ -263,15 +263,17 @@
     window.AquaDark = AquaDark;
 
     /* ------------------------------------------------------------------ */
-    /*  DOMContentLoaded 後に初期化                                         */
+    /* 初期化とイベントバインド                                            */
     /* ------------------------------------------------------------------ */
+    // ちらつき防止のため、スタイル注入と判定(init)は即座に実行する
+    init();
+
+    // クリックイベントの監視はDOM構築を待ってから行う
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
-            init();
             bindToggleButtons();
         });
     } else {
-        init();
         bindToggleButtons();
     }
 
