@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | お刺身くん</title>
+    <title>Contact - お刺身くん | oSsmXun</title>
+
+    <script>
+        (function() {
+            try {
+                // localStorageの保存値を確認
+                var savedTheme = localStorage.getItem('aqua-dark-mode');
+                if (savedTheme === '1') {
+                    document.documentElement.classList.add('aqua-dark');
+                } else if (savedTheme === '0') {
+                    // ライトモードなので何もしない
+                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    // 保存値がなく、OS設定がダークモードの場合
+                    document.documentElement.classList.add('aqua-dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
 
     <link rel="stylesheet" href="aqua.design.css">
     <link rel="stylesheet" href="aqua.style.css">
     <link rel="stylesheet" href="aqua.color.css">
     <link rel="stylesheet" href="aqua.mobile.css">
+    <link rel="stylesheet" href="aqua.dark.css">
 
     <script src="aqua.dark.js"></script>
 

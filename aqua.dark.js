@@ -1,137 +1,22 @@
 /*!
- * aqua.dark.js V1.5.0
+ * aqua.dark.js V1.5.0 (ちらつき防止・外部CSS化対応版)
  *
  * Copyright (c) 2026 oSsmXun Design, All rights reserved.
  * Please read the project page: https://ossmxun.net/aqua-design
- *
- * --- 使い方 ---
- * 1. このファイルを HTML に読み込む
- *    <script src="aqua.dark.js"></script>
- *
- * 2. トグルボタンを配置する（data-aqua-dark-toggle 属性だけで動作）
- *    <button data-aqua-dark-toggle>🌙 ダークモード</button>
- *
- * 3. または JavaScript から操作する
- *    AquaDark.toggle();     // トグル
- *    AquaDark.enable();     // ダークモード ON
- *    AquaDark.disable();    // ダークモード OFF
- *    AquaDark.isDark();     // 現在の状態を取得 (boolean)
- *
- * 4. イベントを監視する
- *    document.addEventListener('aqua-dark-change', (e) => {
- *        console.log('dark:', e.detail.dark);
- *    });
  */
 
 (function () {
     'use strict';
 
     /* ------------------------------------------------------------------ */
-    /*  CSS変数 - ダークモード上書き値                                      */
-    /* ------------------------------------------------------------------ */
-    const DARK_CSS = `
-:root.aqua-dark {
-    /* ベース背景: 深いネイビー〜ブラック系グラデーション */
-    --aqua-grad-1: #0d1117;
-    --aqua-grad-2: #161b22;
-    --aqua-grad-3: #1f2937;
-
-    /* プライマリカラーをやや明るめに（視認性確保） */
-    --aqua-primary: #7aa2f7;
-    --aqua-primary-light: #a5c1ff;
-    --aqua-primary-dark: #4e70df;
-
-    /* テキスト */
-    --aqua-text-secondary: #e2e8f0;
-    --aqua-text-muted: rgba(226, 232, 240, 0.55);
-    --aqua-text-inverse: #e2e8f0;
-    --aqua-text-primary: #c9d1d9;
-
-    /* Glass エフェクト — 暗め・低透明度 */
-    --aqua-glass-bg: rgba(22, 27, 34, 0.65);
-    --aqua-glass-bg-light: rgba(31, 41, 55, 0.70);
-    --aqua-glass-bg-dark: rgba(10, 14, 20, 0.75);
-    --aqua-glass-border: rgba(255, 255, 255, 0.12);
-    --aqua-glass-border-light: rgba(255, 255, 255, 0.18);
-    --aqua-glass-border-dark: rgba(255, 255, 255, 0.08);
-    --aqua-glass-shadow-primary: rgba(0, 0, 0, 0.55);
-    --aqua-glass-shadow-secondary: rgba(255, 255, 255, 0.06);
-    --aqua-glass-after-bg: rgba(255, 255, 255, 0.04);
-
-    /* 影 — 全体的に強め */
-    --aqua-shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
-    --aqua-shadow-md: 0 4px 6px -1px rgba(0,0,0,0.5);
-    --aqua-shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5);
-    --aqua-shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.5);
-    --aqua-shadow-glass: 0 8px 32px rgba(0,0,0,0.5);
-    --aqua-shadow-glass-hover: 0 12px 40px rgba(0,0,0,0.6);
-}
-
-/* ダークモード: body 背景 */
-.aqua-dark.aqua-reset,
-.aqua-dark .aqua-reset {
-    background: linear-gradient(135deg, #0d1117, #161b22, #1f2937);
-}
-
-/* ダークモード: glass テキスト影を強く */
-.aqua-dark .aqua-glass,
-.aqua-dark .aqua-glass * {
-    text-shadow:
-        0 1px 4px rgba(0,0,0,0.8),
-        0 1px 8px rgba(0,0,0,0.5);
-}
-
-/* ダークモード: input / textarea */
-.aqua-dark .aqua-input,
-.aqua-dark .aqua-textarea,
-.aqua-dark .aqua-select {
-    color: var(--aqua-text-secondary);
-}
-
-.aqua-dark .aqua-input::placeholder,
-.aqua-dark .aqua-textarea::placeholder {
-    color: var(--aqua-text-muted);
-}
-
-/* ダークモード: ナビゲーション */
-.aqua-dark .aqua-nav {
-    border-bottom-color: rgba(255,255,255,0.08);
-}
-
-/* ダークモード: スライドボタン off 状態トラック */
-.aqua-dark .aqua-slide-track {
-    background: rgba(255,255,255,0.07);
-    border-color: rgba(255,255,255,0.12);
-}
-
-/* ダークモード: トグルアイコン（data-aqua-dark-toggle のアイコン切り替え用） */
-[data-aqua-dark-toggle] .aqua-dark-icon-moon { display: inline; }
-[data-aqua-dark-toggle] .aqua-dark-icon-sun  { display: none;   }
-.aqua-dark [data-aqua-dark-toggle] .aqua-dark-icon-moon { display: none;   }
-.aqua-dark [data-aqua-dark-toggle] .aqua-dark-icon-sun  { display: inline; }
-`;
-
-    /* ------------------------------------------------------------------ */
-    /*  定数                                                                */
+    /* 定数                                                                */
     /* ------------------------------------------------------------------ */
     const STORAGE_KEY = 'aqua-dark-mode';
     const CLASS_NAME  = 'aqua-dark';
-    const STYLE_ID    = 'aqua-dark-styles';
     const ATTR_TOGGLE = 'data-aqua-dark-toggle';
 
     /* ------------------------------------------------------------------ */
-    /*  スタイル注入                                                        */
-    /* ------------------------------------------------------------------ */
-    function injectStyles() {
-        if (document.getElementById(STYLE_ID)) return;
-        const style = document.createElement('style');
-        style.id = STYLE_ID;
-        style.textContent = DARK_CSS;
-        document.head.appendChild(style);
-    }
-
-    /* ------------------------------------------------------------------ */
-    /*  コアロジック                                                        */
+    /* コアロジック                                                        */
     /* ------------------------------------------------------------------ */
     function getRoot() {
         return document.documentElement;
@@ -164,11 +49,9 @@
     }
 
     /* ------------------------------------------------------------------ */
-    /*  初期化: 保存済み設定 or システム設定を反映                          */
+    /* 初期化: 保存済み設定 or システム設定を反映                          */
     /* ------------------------------------------------------------------ */
     function init() {
-        injectStyles();
-
         let dark = false;
 
         // 1. localStorage の値を優先
@@ -186,6 +69,7 @@
                    window.matchMedia('(prefers-color-scheme: dark)').matches;
         }
 
+        // DOMのクラス状態とボタン等の属性を同期
         apply(dark);
 
         // システムのカラースキーム変化を監視（localStorage が未設定の場合のみ追従）
@@ -204,7 +88,7 @@
     }
 
     /* ------------------------------------------------------------------ */
-    /*  イベント委任: data-aqua-dark-toggle をクリックでトグル             */
+    /* イベント委任: data-aqua-dark-toggle をクリックでトグル             */
     /* ------------------------------------------------------------------ */
     function bindToggleButtons() {
         document.addEventListener('click', function (e) {
@@ -214,41 +98,21 @@
     }
 
     /* ------------------------------------------------------------------ */
-    /*  公開 API                                                            */
+    /* 公開 API                                                            */
     /* ------------------------------------------------------------------ */
     const AquaDark = {
-        /**
-         * ダークモードを有効化する
-         */
         enable() {
             apply(true);
         },
-
-        /**
-         * ダークモードを無効化する
-         */
         disable() {
             apply(false);
         },
-
-        /**
-         * ダークモードをトグルする
-         */
         toggle() {
             apply(!this.isDark());
         },
-
-        /**
-         * 現在ダークモードか返す
-         * @returns {boolean}
-         */
         isDark() {
             return getRoot().classList.contains(CLASS_NAME);
         },
-
-        /**
-         * システムのカラースキームに追従させ、localStorage をクリアする
-         */
         followSystem() {
             try {
                 localStorage.removeItem(STORAGE_KEY);
@@ -265,7 +129,6 @@
     /* ------------------------------------------------------------------ */
     /* 初期化とイベントバインド                                            */
     /* ------------------------------------------------------------------ */
-    // ちらつき防止のため、スタイル注入と判定(init)は即座に実行する
     init();
 
     // クリックイベントの監視はDOM構築を待ってから行う
