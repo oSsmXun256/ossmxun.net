@@ -1,4 +1,22 @@
+/*!
+ * aqua.dark.css V1.5.1
+ * ダークモード専用スタイルシート
+ * aqua.dark.js から分離 — エディタ補完・メンテナンス性向上
+ *
+ * Copyright (c) 2026 oSsmXun Design, All rights reserved.
+ * Please read the project page: https://ossmxun.net/aqua-design
+ *
+ * 読み込み順: aqua.design.css → aqua.style.css → aqua.color.css → aqua.dark.css → aqua.mobile.css
+ */
+
+/* ==========================================================================
+   DARK MODE — CSS変数上書き
+   ========================================================================== */
+
 :root.aqua-dark {
+    /* ネイティブUIパーツ（スクロールバー・フォームコントロール）もダーク化 */
+    color-scheme: dark;
+
     /* ベース背景: 深いネイビー〜ブラック系グラデーション */
     --aqua-grad-1: #0d1117;
     --aqua-grad-2: #161b22;
@@ -27,29 +45,38 @@
     --aqua-glass-after-bg: rgba(255, 255, 255, 0.04);
 
     /* 影 — 全体的に強め */
-    --aqua-shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
-    --aqua-shadow-md: 0 4px 6px -1px rgba(0,0,0,0.5);
-    --aqua-shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5);
-    --aqua-shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.5);
-    --aqua-shadow-glass: 0 8px 32px rgba(0,0,0,0.5);
-    --aqua-shadow-glass-hover: 0 12px 40px rgba(0,0,0,0.6);
+    --aqua-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --aqua-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --aqua-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --aqua-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    --aqua-shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --aqua-shadow-glass-hover: 0 12px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* ダークモード: body 背景 */
+/* ==========================================================================
+   DARK MODE — body 背景
+   ========================================================================== */
+
 .aqua-dark.aqua-reset,
 .aqua-dark .aqua-reset {
     background: linear-gradient(135deg, #0d1117, #161b22, #1f2937);
 }
 
-/* ダークモード: glass テキスト影を強く */
+/* ==========================================================================
+   DARK MODE — Glass テキスト影を強く
+   ========================================================================== */
+
 .aqua-dark .aqua-glass,
 .aqua-dark .aqua-glass * {
     text-shadow:
-        0 1px 4px rgba(0,0,0,0.8),
-        0 1px 8px rgba(0,0,0,0.5);
+        0 1px 4px rgba(0, 0, 0, 0.8),
+        0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* ダークモード: input / textarea */
+/* ==========================================================================
+   DARK MODE — フォーム要素
+   ========================================================================== */
+
 .aqua-dark .aqua-input,
 .aqua-dark .aqua-textarea,
 .aqua-dark .aqua-select {
@@ -61,19 +88,32 @@
     color: var(--aqua-text-muted);
 }
 
-/* ダークモード: ナビゲーション */
+/* ==========================================================================
+   DARK MODE — ナビゲーション
+   ========================================================================== */
+
 .aqua-dark .aqua-nav {
-    border-bottom-color: rgba(255,255,255,0.08);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
-/* ダークモード: スライドボタン off 状態トラック */
+/* ==========================================================================
+   DARK MODE — スライドボタン OFF 状態トラック
+   ========================================================================== */
+
 .aqua-dark .aqua-slide-track {
-    background: rgba(255,255,255,0.07);
-    border-color: rgba(255,255,255,0.12);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.12);
 }
 
-/* ダークモード: トグルアイコン（data-aqua-dark-toggle のアイコン切り替え用） */
+/* ==========================================================================
+   DARK MODE — ダークトグルボタン アイコン切り替え
+   data-aqua-dark-toggle 属性を持つ要素のアイコン表示制御
+   ========================================================================== */
+
+/* ライトモード時: 月アイコン表示、太陽アイコン非表示 */
 [data-aqua-dark-toggle] .aqua-dark-icon-moon { display: inline; }
-[data-aqua-dark-toggle] .aqua-dark-icon-sun  { display: none;   }
-.aqua-dark [data-aqua-dark-toggle] .aqua-dark-icon-moon { display: none;   }
+[data-aqua-dark-toggle] .aqua-dark-icon-sun  { display: none; }
+
+/* ダークモード時: 太陽アイコン表示、月アイコン非表示 */
+.aqua-dark [data-aqua-dark-toggle] .aqua-dark-icon-moon { display: none; }
 .aqua-dark [data-aqua-dark-toggle] .aqua-dark-icon-sun  { display: inline; }

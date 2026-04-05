@@ -1,5 +1,5 @@
 /*!
- * aqua.design.css V1.5.0
+ * aqua.design.css V1.5.1
  *
  * Copyright (c) 2026 oSsmXun Design, All rights reserved.
  * Please read the project page: https://ossmxun.net/aqua-design
@@ -11,13 +11,13 @@
 
 :root {
     /* Primary Color System (default = blue) */
-    --aqua-primary: #4e70df;
-    --aqua-primary-light: #6b8aff;
-    --aqua-primary-dark: #3355cc;
-    --aqua-grad-1: #667eea;
-    --aqua-grad-2: #9f85d6;
-    --aqua-grad-3: #8bb9ff;
-    --aqua-text-primary: #17335e;
+    --aqua-primary: #d53f8c;
+    --aqua-primary-light: #f687b3;
+    --aqua-primary-dark: #97266d;
+    --aqua-grad-1: #ff9a9e;
+    --aqua-grad-2: #fecfef;
+    --aqua-grad-3: #fbc2eb;
+    --aqua-text-primary: #5a2b3c;
     --aqua-text-secondary: #ffffff;
     
     /* Text Colors */

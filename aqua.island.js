@@ -1,5 +1,5 @@
 /*!
- * aqua.island.js V1.5.0
+ * aqua.island.js V1.5.1
  * Dynamic Island 制御用スクリプト
  */
 

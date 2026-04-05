@@ -2,22 +2,15 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>お刺身くん | oSsmXun</title>
 
     <script>
-        (function() {
+        (function () {
             try {
-                // localStorageの保存値を確認
-                var savedTheme = localStorage.getItem('aqua-dark-mode');
-                if (savedTheme === '1') {
-                    document.documentElement.classList.add('aqua-dark');
-                } else if (savedTheme === '0') {
-                    // ライトモードなので何もしない
-                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    // 保存値がなく、OS設定がダークモードの場合
-                    document.documentElement.classList.add('aqua-dark');
-                }
+                var s = localStorage.getItem('aqua-dark-mode');
+                var dark = s === '1' || (s === null && matchMedia('(prefers-color-scheme: dark)').matches);
+                if (dark) document.documentElement.classList.add('aqua-dark');
             } catch (e) {}
         })();
     </script>
@@ -25,18 +18,19 @@
     <link rel="stylesheet" href="aqua.design.css">
     <link rel="stylesheet" href="aqua.style.css">
     <link rel="stylesheet" href="aqua.color.css">
-    <link rel="stylesheet" href="aqua.mobile.css">
     <link rel="stylesheet" href="aqua.dark.css">
-
-    <script src="aqua.dark.js"></script>
+    <link rel="stylesheet" href="aqua.mobile.css">
 
     <link rel="icon" type="image/webp" href="./img/aikon.w/n_ossm_nc.webp">
     <meta name="description" content="プログラミングやゲームなどをしているお刺身くんのホームページです。">
 </head>
-<body class="aqua-reset aqua-theme-default aqua-flex aqua-flex-col aqua-items-center aqua-min-h-screen aqua-py-8" style="padding-bottom: 0rem !important;">
+<body class="aqua-reset aqua-theme-pink aqua-flex aqua-flex-col aqua-items-center aqua-min-h-screen aqua-py-8" style="padding-bottom: 0rem !important;">
 
     <div class="aqua-fixed aqua-top-4 aqua-right-4 aqua-z-50">
-        <button data-aqua-dark-toggle class="aqua-btn aqua-btn-glass" style="padding: 0.35rem 0.8rem; min-width: auto; font-size: 0.8rem; border-radius: 999px;">
+        <button data-aqua-dark-toggle class="aqua-btn aqua-btn-glass" 
+                style="padding: 0.35rem 0.8rem; min-width: auto; font-size: 0.8rem; border-radius: 999px;"
+                aria-pressed="false"
+                aria-label="ダークモードに切り替え">
             <span class="aqua-dark-icon-sun">🌙 Dark</span>
             <span class="aqua-dark-icon-moon">☀️ Light</span>
         </button>
@@ -67,7 +61,6 @@
             </h2>
             
             <div class="aqua-grid aqua-grid-cols-1 aqua-sm:grid-cols-2 aqua-gap-4">
-                
                 <a href="./contact.html" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
                     <img alt="Contact" class="aqua-w-8 aqua-h-8 aqua-object-contain" src="./img/home.w/e-mail.webp">
                     <div class="aqua-flex-col aqua-overflow-hidden">
@@ -177,5 +170,7 @@
     <footer class="aqua-w-full aqua-overflow-hidden aqua-mt-24 aqua-flex aqua-justify-center aqua-items-end">
         <img src="./img/original/bottom.png" alt="Footer Image" class="aqua-w-full aqua-h-auto" style="display: block;">
     </footer>
+
+    <script src="aqua.dark.js"></script>
 </body>
 </html>
