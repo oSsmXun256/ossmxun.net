@@ -5,93 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Contact - お刺身くん | oSsmXun</title>
 
-    <script>
-        (function () {
-            try {
-                var s = localStorage.getItem('aqua-dark-mode');
-                var dark = s === '1' || (s === null && matchMedia('(prefers-color-scheme: dark)').matches);
-                if (dark) document.documentElement.classList.add('aqua-dark');
-            } catch (e) {}
-        })();
-    </script>
-
     <link rel="stylesheet" href="aqua.design.css">
     <link rel="stylesheet" href="aqua.style.css">
-    <link rel="stylesheet" href="aqua.color.css">
-    <link rel="stylesheet" href="aqua.dark.css">
-    <link rel="stylesheet" href="aqua.mobile.css">
+    <link rel="stylesheet" href="aqua.effect.css">
 
-    <link rel="icon" type="image/webp" href="./img/aikon.w/n_ossm_nc.webp">
+    <link rel="icon" type="image/webp" href="https://ossmxun.net/img/aikon.w/n_ossm_nc.webp">
+    <link rel="canonical" href="https://ossmxun.net/contact.html">
+
+    <meta name="description" content="お刺身くんへのお問い合わせページです。">
+
+    <meta property="og:title" content="お問い合わせ | お刺身くん">
+    <meta property="og:url" content="https://ossmxun.net/contact.html">
+    <meta property="og:description" content="お刺身くんへのお問い合わせページです。">
+    <meta property="og:image" content="https://ossmxun.net/img/original/new_header.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="お問い合わせ | お刺身くん">
+    <meta name="twitter:description" content="お刺身くんへのお問い合わせページです。">
+    <meta name="twitter:image" content="https://ossmxun.net/img/original/new_header.png">
+
+    <style>
+        body {
+            color: #fff;
+            background:
+                radial-gradient(circle at 1px 1px, rgba(255,255,255,0.18) 1px, transparent 0) 0 0/26px 26px,
+                linear-gradient(135deg, var(--aqua-grad-1), var(--aqua-grad-2));
+            background-attachment: fixed;
+        }
+        .home-avatar { width: 128px; height: 128px; object-fit: cover; border: 4px solid #fff; border-radius: 50%; box-shadow: var(--aqua-shadow-lg); flex-shrink: 0; }
+        .link-card { text-decoration: none; color: #fff; }
+        .link-icon { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }
+        .link-label { font-size: 1rem; font-weight: 700; display: block; }
+        .link-sub { font-size: 0.875rem; opacity: 0.85; }
+    </style>
 </head>
-<body class="aqua-reset aqua-theme-default aqua-flex aqua-flex-col aqua-items-center aqua-min-h-screen aqua-py-8" style="padding-bottom: 0rem !important;">
+<body class="aqua-flex aqua-flex-col aqua-items-center aqua-min-h-screen aqua-py-8">
 
-    <div class="aqua-fixed aqua-top-4 aqua-right-4 aqua-z-50">
-        <button data-aqua-dark-toggle class="aqua-btn aqua-btn-glass" 
-                style="padding: 0.35rem 0.8rem; min-width: auto; font-size: 0.8rem; border-radius: 999px;"
-                aria-pressed="false"
-                aria-label="ダークモードに切り替え">
-            <span class="aqua-dark-icon-sun">🌙 Dark</span>
-            <span class="aqua-dark-icon-moon">☀️ Light</span>
-        </button>
-    </div>
+    <header class="aqua-container aqua-container-md aqua-w-full aqua-px-4" style="margin-bottom: 3rem;">
+        <div class="aqua-glass aqua-p-8 aqua-flex aqua-md:flex-col aqua-items-center aqua-justify-center aqua-gap-8 aqua-text-center">
+            <img class="home-avatar" alt="お刺身くん" src="./img/aikon.w/n_aikon_t.webp">
 
-    <header class="aqua-container aqua-max-w-3xl aqua-w-full aqua-mb-12 aqua-px-4">
-        <div class="aqua-glass aqua-p-8 aqua-flex aqua-flex-col aqua-md:aqua-flex-row aqua-items-center aqua-justify-center aqua-gap-8 aqua-text-center aqua-md:aqua-text-left">
-            <img class="aqua-rounded-full aqua-border-4 aqua-border-white aqua-w-32 aqua-h-32 aqua-object-cover aqua-shadow-lg aqua-shrink-0" alt="お刺身くん" src="./img/aikon.w/n_aikon_t.webp">
-            
             <div>
-                <h1 class="aqua-heading aqua-text-3xl aqua-font-bold aqua-mb-3 aqua-text-white" style="text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                    Contact Me
-                </h1>
-                <p class="aqua-text aqua-text-white aqua-leading-relaxed aqua-text-sm aqua-md:aqua-text-base">
+                <h1 class="aqua-heading-1 aqua-text-white aqua-my-4">Contact Me</h1>
+                <p class="aqua-text-white aqua-leading-relaxed aqua-text-sm">
                     お問い合わせはこちらから。
                 </p>
             </div>
         </div>
     </header>
 
-    <main class="aqua-container aqua-container-sm aqua-w-full aqua-mb-16">
+    <main class="aqua-container aqua-container-sm aqua-w-full" style="margin-bottom: 4rem;">
         <section>
-            <h2 class="aqua-heading aqua-text-2xl aqua-text-center aqua-mb-6 aqua-font-bold">Reach Out</h2>
-            <div class="aqua-grid aqua-grid-cols-1 aqua-gap-4">
-                
-                <a href="./" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="Home" class="aqua-w-10 aqua-h-10 aqua-rounded-md aqua-object-contain" src="./img/aikon.w/n_aikon_t.webp">
-                    <div class="aqua-flex-col">
-                        <span class="aqua-font-bold aqua-block aqua-text-base">Home</span>
-                        <span class="aqua-text-sm aqua-text-muted">ホームに戻る</span>
+            <h2 class="aqua-heading-2 aqua-text-center aqua-my-4">Reach Out</h2>
+            <div class="aqua-grid aqua-gap-4">
+
+                <a href="./" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="Home" class="link-icon" src="./img/aikon.w/n_aikon_t.webp">
+                    <div>
+                        <span class="link-label">Home</span>
+                        <span class="link-sub">ホームに戻る</span>
                     </div>
                 </a>
 
                 <div class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white">
-                    <img alt="Email" class="aqua-w-10 aqua-h-10 aqua-rounded-md aqua-object-contain" src="./img/home.w/e-mail.webp">
-                    <div class="aqua-flex-col">
-                        <span class="aqua-font-bold aqua-block aqua-text-base">info★ossmxun.net</span>
-                        <span class="aqua-text-sm aqua-text-muted">★を@へ置き換えてください。</span>
+                    <img alt="Email" class="link-icon" src="./img/home.w/e-mail.webp">
+                    <div>
+                        <span class="link-label">info★ossmxun.net</span>
+                        <span class="link-sub">★を@へ置き換えてください。</span>
                     </div>
                 </div>
 
-                <a href="https://xu.f5.si/d-sp" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="Discord" class="aqua-w-10 aqua-h-10 aqua-rounded-md aqua-object-contain" src="./img/home.w/discord.webp">
-                    <div class="aqua-flex-col">
-                        <span class="aqua-font-bold aqua-block aqua-text-base">Support Server</span>
-                        <span class="aqua-text-sm aqua-text-muted">サポートサーバーです。</span>
+                <a href="https://xu.f5.si/d-sp" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="Discord" class="link-icon" src="./img/home.w/discord.webp">
+                    <div>
+                        <span class="link-label">Support Server</span>
+                        <span class="link-sub">サポートサーバーです。</span>
                     </div>
                 </a>
 
-                <a href="https://x.com/oSsmXun" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="X" class="aqua-w-10 aqua-h-10 aqua-rounded-md aqua-object-contain" src="./img/home.w/x.webp">
-                    <div class="aqua-flex-col">
-                        <span class="aqua-font-bold aqua-block aqua-text-base">X</span>
-                        <span class="aqua-text-sm aqua-text-muted">DMよりお問い合わせください。</span>
+                <a href="https://x.com/oSsmXun" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="X" class="link-icon" src="./img/home.w/x.webp">
+                    <div>
+                        <span class="link-label">X</span>
+                        <span class="link-sub">DMよりお問い合わせください。</span>
                     </div>
                 </a>
 
-                <a href="https://bsky.app/profile/ossmxun.net" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="Bluesky" class="aqua-w-10 aqua-h-10 aqua-rounded-md aqua-object-contain" src="./img/home.w/bluesky.webp">
-                    <div class="aqua-flex-col">
-                        <span class="aqua-font-bold aqua-block aqua-text-base">Bluesky</span>
-                        <span class="aqua-text-sm aqua-text-muted">チャットよりお問い合わせください。</span>
+                <a href="https://bsky.app/profile/ossmxun.net" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="Bluesky" class="link-icon" src="./img/home.w/bluesky.webp">
+                    <div>
+                        <span class="link-label">Bluesky</span>
+                        <span class="link-sub">チャットよりお問い合わせください。</span>
                     </div>
                 </a>
 
@@ -99,10 +103,9 @@
         </section>
     </main>
 
-    <footer class="aqua-w-full aqua-overflow-hidden aqua-mt-24 aqua-flex aqua-justify-center aqua-items-end">
-        <img src="./img/original/bottom.png" alt="Footer Image" class="aqua-w-full aqua-h-auto" style="display: block;">
+    <footer class="aqua-w-full aqua-overflow-hidden aqua-flex aqua-justify-center aqua-items-end" style="margin-top: 6rem;">
+        <img src="./img/original/bottom.png" alt="Footer Image" class="aqua-w-full" style="display: block; height: auto;">
     </footer>
 
-    <script src="aqua.dark.js"></script>
 </body>
 </html>

@@ -5,46 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>お刺身くん | oSsmXun</title>
 
-    <script>
-        (function () {
-            try {
-                var s = localStorage.getItem('aqua-dark-mode');
-                var dark = s === '1' || (s === null && matchMedia('(prefers-color-scheme: dark)').matches);
-                if (dark) document.documentElement.classList.add('aqua-dark');
-            } catch (e) {}
-        })();
-    </script>
-
     <link rel="stylesheet" href="aqua.design.css">
     <link rel="stylesheet" href="aqua.style.css">
-    <link rel="stylesheet" href="aqua.color.css">
-    <link rel="stylesheet" href="aqua.dark.css">
-    <link rel="stylesheet" href="aqua.mobile.css">
+    <link rel="stylesheet" href="aqua.effect.css">
 
-    <link rel="icon" type="image/webp" href="./img/aikon.w/n_ossm_nc.webp">
+    <link rel="icon" type="image/webp" href="https://ossmxun.net/img/aikon.w/n_ossm_nc.webp">
+    <link rel="canonical" href="https://ossmxun.net/">
+
+    <meta name="google" content="nositelinkssearchbox">
+    <meta name="googlebot" content="notranslate">
+    <meta name="google" content="nopagereadaloud">
+
     <meta name="description" content="プログラミングやゲームなどをしているお刺身くんのホームページです。">
+    <meta name="keywords" content="お刺身くん,お刺身,oSsmXun,ossmxun,oSsm,Xun,LakeLine,Lakeline,lakeline,lake,line,fms_spica,fms,spica,ホームページ,ウェブサイト,homepage,website">
+    <meta name="author" content="© 2026 oSsmXun. All Rights Reserved.">
+
+    <meta property="og:title" content="お刺身くん | oSsmXun">
+    <meta property="og:url" content="https://ossmxun.net/">
+    <meta property="og:image" content="https://ossmxun.net/img/original/new_header.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="お刺身くん | oSsmXun">
+    <meta property="og:description" content="プログラミングやゲームなどをしているお刺身くんのホームページです。">
+    <meta property="og:locale" content="ja_JP">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="お刺身くん | oSsmXun" />
+    <meta name="twitter:description" content="プログラミングやゲームなどをしているお刺身くんのホームページです。" />
+    <meta name="twitter:image" content="https://ossmxun.net/img/original/new_header.png" />
+
+    <style>
+        body {
+            color: #fff;
+            background:
+                radial-gradient(circle at 1px 1px, rgba(255,255,255,0.18) 1px, transparent 0) 0 0/26px 26px,
+                linear-gradient(135deg, var(--aqua-grad-1), var(--aqua-grad-2));
+            background-attachment: fixed;
+        }
+        .home-avatar { width: 128px; height: 128px; object-fit: cover; border: 4px solid #fff; border-radius: 50%; box-shadow: var(--aqua-shadow-lg); flex-shrink: 0; }
+        .link-card { text-decoration: none; color: #fff; }
+        .link-icon { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; }
+        .link-label { font-size: 0.875rem; font-weight: 700; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .link-sub { font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0.85; }
+    </style>
 </head>
-<body class="aqua-reset aqua-theme-pink aqua-flex aqua-flex-col aqua-items-center aqua-min-h-screen aqua-py-8" style="padding-bottom: 0rem !important;">
+<body class="aqua-flex aqua-flex-col aqua-items-center aqua-min-h-screen aqua-py-8">
 
-    <div class="aqua-fixed aqua-top-4 aqua-right-4 aqua-z-50">
-        <button data-aqua-dark-toggle class="aqua-btn aqua-btn-glass" 
-                style="padding: 0.35rem 0.8rem; min-width: auto; font-size: 0.8rem; border-radius: 999px;"
-                aria-pressed="false"
-                aria-label="ダークモードに切り替え">
-            <span class="aqua-dark-icon-sun">🌙 Dark</span>
-            <span class="aqua-dark-icon-moon">☀️ Light</span>
-        </button>
-    </div>
+    <header class="aqua-container aqua-container-md aqua-w-full aqua-px-4" style="margin-bottom: 3rem;">
+        <div class="aqua-glass aqua-p-8 aqua-flex aqua-md:flex-col aqua-items-center aqua-justify-center aqua-gap-8 aqua-text-center">
+            <img class="home-avatar" alt="お刺身くん" src="./img/aikon.w/n_aikon_t.webp">
 
-    <header class="aqua-container aqua-max-w-3xl aqua-w-full aqua-mb-12 aqua-px-4">
-        <div class="aqua-glass aqua-p-8 aqua-flex aqua-flex-col aqua-md:aqua-flex-row aqua-items-center aqua-justify-center aqua-gap-8 aqua-text-center aqua-md:aqua-text-left">
-            <img class="aqua-rounded-full aqua-border-4 aqua-border-white aqua-w-32 aqua-h-32 aqua-object-cover aqua-shadow-lg aqua-shrink-0" alt="お刺身くん" src="./img/aikon.w/n_aikon_t.webp">
-            
             <div>
-                <h1 class="aqua-heading aqua-text-3xl aqua-font-bold aqua-mb-3" style="text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                    お刺身くん / oSsmXun
-                </h1>
-                <p class="aqua-text aqua-leading-relaxed aqua-text-sm aqua-md:aqua-text-base">
+                <h1 class="aqua-heading-1 aqua-my-4">お刺身くん / oSsmXun</h1>
+                <p class="aqua-leading-relaxed aqua-text-sm">
                     趣味でプログラミングしてる学生。<br>
                     アニメが大好きなゲーム廃人。<br>
                     シエスタは俺の嫁。
@@ -53,124 +65,117 @@
         </div>
     </header>
 
-    <main class="aqua-container aqua-container-xl aqua-grid aqua-grid-cols-1 aqua-lg:grid-cols-2 aqua-gap-8 aqua-items-start aqua-w-full aqua-mb-16">
-        
+    <main class="aqua-container aqua-container-xl aqua-grid aqua-grid-2 aqua-w-full" style="margin-bottom: 4rem;">
+
         <section class="aqua-w-full">
-            <h2 class="aqua-heading aqua-text-2xl aqua-text-center aqua-mb-6 aqua-font-bold">
-                Accounts
-            </h2>
-            
-            <div class="aqua-grid aqua-grid-cols-1 aqua-sm:grid-cols-2 aqua-gap-4">
-                <a href="./contact.html" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="Contact" class="aqua-w-8 aqua-h-8 aqua-object-contain" src="./img/home.w/e-mail.webp">
-                    <div class="aqua-flex-col aqua-overflow-hidden">
-                        <span class="aqua-font-bold aqua-block aqua-text-sm aqua-whitespace-nowrap">Contact</span>
-                    </div>
+            <h2 class="aqua-heading-2 aqua-text-center aqua-my-4">Accounts</h2>
+
+            <div class="aqua-grid aqua-grid-3">
+                <a href="./contact.html" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="Contact" class="link-icon" src="./img/home.w/e-mail.webp">
+                    <span class="link-label">Contact</span>
                 </a>
-                
-                <a href="https://www.youtube.com/channel/UCQ-7PqL5qKKCc2W2w8dXtnw" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="YouTube" class="aqua-w-8 aqua-h-8 aqua-object-contain" src="./img/home.w/youtube.webp">
-                    <div class="aqua-flex-col aqua-overflow-hidden">
-                        <span class="aqua-font-bold aqua-block aqua-text-sm aqua-whitespace-nowrap">Youtube</span>
-                        <span class="aqua-text-xs aqua-text-muted aqua-truncate">@oSsmXun</span>
+
+                <a href="https://www.youtube.com/channel/UCQ-7PqL5qKKCc2W2w8dXtnw" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="YouTube" class="link-icon" src="./img/home.w/youtube.webp">
+                    <div>
+                        <span class="link-label">Youtube</span>
+                        <span class="link-sub">@oSsmXun</span>
                     </div>
                 </a>
 
-                <a href="https://x.com/oSsmXun" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="X" class="aqua-w-8 aqua-h-8 aqua-object-contain" src="./img/home.w/x.webp">
-                    <div class="aqua-flex-col aqua-overflow-hidden">
-                        <span class="aqua-font-bold aqua-block aqua-text-sm aqua-whitespace-nowrap">X</span>
-                        <span class="aqua-text-xs aqua-text-muted aqua-truncate">@oSsmXun</span>
+                <a href="https://x.com/oSsmXun" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="X" class="link-icon" src="./img/home.w/x.webp">
+                    <div>
+                        <span class="link-label">X</span>
+                        <span class="link-sub">@oSsmXun</span>
                     </div>
                 </a>
 
-                <a href="https://bsky.app/profile/ossmxun.net" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="BlueSky" class="aqua-w-8 aqua-h-8 aqua-object-contain" src="./img/home.w/bluesky.webp">
-                    <div class="aqua-flex-col aqua-overflow-hidden">
-                        <span class="aqua-font-bold aqua-block aqua-text-sm aqua-whitespace-nowrap">Bluesky</span>
-                        <span class="aqua-text-xs aqua-text-muted aqua-truncate">@ossmxun.net</span>
+                <a href="https://bsky.app/profile/ossmxun.net" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="BlueSky" class="link-icon" src="./img/home.w/bluesky.webp">
+                    <div>
+                        <span class="link-label">Bluesky</span>
+                        <span class="link-sub">@ossmxun.net</span>
                     </div>
                 </a>
 
-                <a href="https://misskey.io/@oSsmXun" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="Misskey" class="aqua-w-8 aqua-h-8 aqua-object-contain" src="./img/home.w/misskey.webp">
-                    <div class="aqua-flex-col aqua-overflow-hidden">
-                        <span class="aqua-font-bold aqua-block aqua-text-sm aqua-whitespace-nowrap">Misskey</span>
-                        <span class="aqua-text-xs aqua-text-muted aqua-truncate">@oSsmXun</span>
+                <a href="https://misskey.io/@oSsmXun" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="Misskey" class="link-icon" src="./img/home.w/misskey.webp">
+                    <div>
+                        <span class="link-label">Misskey</span>
+                        <span class="link-sub">@oSsmXun</span>
                     </div>
                 </a>
 
-                <a href="https://github.com/oSsmXun256/" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="Github" class="aqua-w-8 aqua-h-8 aqua-object-contain" src="./img/home.w/github.webp">
-                    <div class="aqua-flex-col aqua-overflow-hidden">
-                        <span class="aqua-font-bold aqua-block aqua-text-sm aqua-whitespace-nowrap">Github</span>
-                        <span class="aqua-text-xs aqua-text-muted aqua-truncate">oSsmXun256</span>
+                <a href="https://github.com/oSsmXun256/" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="Github" class="link-icon" src="./img/home.w/github.webp">
+                    <div>
+                        <span class="link-label">Github</span>
+                        <span class="link-sub">oSsmXun256</span>
                     </div>
                 </a>
 
-                <a href="https://xu.f5.si/discord" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="Discord" class="aqua-w-8 aqua-h-8 aqua-object-contain" src="./img/home.w/discord.webp">
-                    <div class="aqua-flex-col aqua-overflow-hidden">
-                        <span class="aqua-font-bold aqua-block aqua-text-sm aqua-whitespace-nowrap">Discord</span>
-                        <span class="aqua-text-xs aqua-text-muted aqua-truncate">ossmxun</span>
+                <a href="https://xu.f5.si/discord" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="Discord" class="link-icon" src="./img/home.w/discord.webp">
+                    <div>
+                        <span class="link-label">Discord</span>
+                        <span class="link-sub">ossmxun</span>
                     </div>
                 </a>
 
-                <a href="https://vrc.ossmxun.net/" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="VRChat" class="aqua-w-8 aqua-h-8 aqua-object-contain" src="./img/home.w/vrc.webp">
-                    <div class="aqua-flex-col aqua-overflow-hidden">
-                        <span class="aqua-font-bold aqua-block aqua-text-sm aqua-whitespace-nowrap">VRChat</span>
-                        <span class="aqua-text-xs aqua-text-muted aqua-truncate">お刺身くん</span>
+                <a href="https://vrc.ossmxun.net/" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="VRChat" class="link-icon" src="./img/home.w/vrc.webp">
+                    <div>
+                        <span class="link-label">VRChat</span>
+                        <span class="link-sub">お刺身くん</span>
                     </div>
                 </a>
             </div>
         </section>
 
         <section class="aqua-w-full">
-            <h2 class="aqua-heading aqua-text-2xl aqua-text-center aqua-mb-6 aqua-font-bold">
-                Projects
-            </h2>
-            
-            <div class="aqua-grid aqua-grid-cols-1 aqua-sm:grid-cols-2 aqua-gap-4">
-                <a href="https://dashboard.ossmxun.net/" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="Dashboard" class="aqua-w-8 aqua-h-8 aqua-rounded-full aqua-object-cover" src="./img/aikon.w/n_ossm_nc.webp">
-                    <div class="aqua-flex-col aqua-overflow-hidden">
-                        <span class="aqua-font-bold aqua-block aqua-text-sm aqua-whitespace-nowrap">oSsmXun Dashboard</span>
-                        <span class="aqua-text-xs aqua-text-muted aqua-truncate">ダッシュボード</span>
+            <h2 class="aqua-heading-2 aqua-text-center aqua-my-4">Projects</h2>
+
+            <div class="aqua-grid aqua-grid-3">
+                <a href="https://dashboard.ossmxun.net/" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="Dashboard" class="link-icon aqua-rounded-full" style="object-fit: cover;" src="./img/aikon.w/n_ossm_nc.webp">
+                    <div>
+                        <span class="link-label">oSsmXun Dashboard</span>
+                        <span class="link-sub">ダッシュボード</span>
                     </div>
                 </a>
 
-                <a href="https://app.ossmxun.net/honoka/" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="Honoka" class="aqua-w-8 aqua-h-8 aqua-rounded-md aqua-object-cover" src="./img/home.w/honoka.webp">
-                    <div class="aqua-flex-col aqua-overflow-hidden">
-                        <span class="aqua-font-bold aqua-block aqua-text-sm aqua-whitespace-nowrap">穂乃花/Honoka</span>
-                        <span class="aqua-text-xs aqua-text-muted aqua-truncate">多機能Bot</span>
+                <a href="https://app.ossmxun.net/honoka/" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="Honoka" class="link-icon aqua-rounded" style="object-fit: cover;" src="./img/home.w/honoka.webp">
+                    <div>
+                        <span class="link-label">穂乃花/Honoka</span>
+                        <span class="link-sub">多機能Bot</span>
                     </div>
                 </a>
 
-                <a href="https://app.ossmxun.net/kanon/" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="Kanon" class="aqua-w-8 aqua-h-8 aqua-rounded-md aqua-object-cover" src="./img/home.w/kanon.webp">
-                    <div class="aqua-flex-col aqua-overflow-hidden">
-                        <span class="aqua-font-bold aqua-block aqua-text-sm aqua-whitespace-nowrap">奏音/Kanon</span>
-                        <span class="aqua-text-xs aqua-text-muted aqua-truncate">音楽Bot</span>
+                <a href="https://app.ossmxun.net/kanon/" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="Kanon" class="link-icon aqua-rounded" style="object-fit: cover;" src="./img/home.w/kanon.webp">
+                    <div>
+                        <span class="link-label">奏音/Kanon</span>
+                        <span class="link-sub">音楽Bot</span>
                     </div>
                 </a>
 
-                <a href="https://app.ossmxun.net/notify/" class="aqua-glass aqua-p-3 aqua-flex aqua-items-center aqua-gap-3 aqua-no-underline aqua-text-white aqua-transition-transform aqua-duration-300 aqua-hover:scale-105">
-                    <img alt="Notify" class="aqua-w-8 aqua-h-8 aqua-rounded-md aqua-object-cover" src="./img/home.w/notify.webp">
-                    <div class="aqua-flex-col aqua-overflow-hidden">
-                        <span class="aqua-font-bold aqua-block aqua-text-sm aqua-whitespace-nowrap">Notify</span>
-                        <span class="aqua-text-xs aqua-text-muted aqua-truncate">通知Bot</span>
+                <a href="https://app.ossmxun.net/notify/" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
+                    <img alt="Notify" class="link-icon aqua-rounded" style="object-fit: cover;" src="./img/home.w/notify.webp">
+                    <div>
+                        <span class="link-label">Notify</span>
+                        <span class="link-sub">通知Bot</span>
                     </div>
                 </a>
             </div>
         </section>
     </main>
 
-    <footer class="aqua-w-full aqua-overflow-hidden aqua-mt-24 aqua-flex aqua-justify-center aqua-items-end">
-        <img src="./img/original/bottom.png" alt="Footer Image" class="aqua-w-full aqua-h-auto" style="display: block;">
+    <footer class="aqua-w-full aqua-overflow-hidden aqua-flex aqua-justify-center aqua-items-end" style="margin-top: 6rem;">
+        <img src="./img/original/bottom.png" alt="Footer Image" class="aqua-w-full" style="display: block; height: auto;">
     </footer>
 
-    <script src="aqua.dark.js"></script>
 </body>
 </html>

@@ -7,28 +7,46 @@
 
     <link rel="stylesheet" href="https://ossmxun.net/aqua.design.css">
     <link rel="stylesheet" href="https://ossmxun.net/aqua.style.css">
-    <link rel="stylesheet" href="https://ossmxun.net/aqua.color.css">
+    <link rel="stylesheet" href="https://ossmxun.net/aqua.effect.css">
 
     <link rel="icon" type="image/webp" href="https://ossmxun.net/img/aikon.w/n_ossm_nc.webp">
-</head>
-<body class="aqua-reset aqua-theme-default aqua-flex aqua-items-center aqua-justify-center aqua-min-h-screen aqua-p-4">
 
-    <div class="aqua-glass aqua-p-8 aqua-text-center aqua-max-w-md aqua-w-full aqua-flex aqua-items-center aqua-justify-center aqua-flex-col aqua-gap-6">
-        
-        <div class="aqua-text-6xl aqua-font-bold aqua-text-white" style="font-size: 5rem; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-            500
-        </div>
-        
-        <h1 class="aqua-heading aqua-text-2xl aqua-m-0">Internal Server Error</h1>
-        
-        <p class="aqua-text aqua-text-muted aqua-text-sm aqua-leading-relaxed">
-            サーバーで予期せぬエラーが発生しました。<br>
-            一時的な問題である可能性があります。<br>
-            後ほどお試しください。<br>
-            URLをご確認いただくか、管理者にお問い合わせください。
+    <meta name="robots" content="noindex,nofollow">
+
+    <meta property="og:title" content="500 Internal Server Error | お刺身くん">
+    <meta property="og:description" content="サーバーで予期せぬエラーが発生しました。">
+    <meta property="og:image" content="https://ossmxun.net/img/original/new_header.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="500 Internal Server Error | お刺身くん">
+    <meta name="twitter:description" content="サーバーで予期せぬエラーが発生しました。">
+    <meta name="twitter:image" content="https://ossmxun.net/img/original/new_header.png">
+
+    <style>
+        body {
+            color: #fff;
+            background:
+                radial-gradient(circle at 1px 1px, rgba(255,255,255,0.18) 1px, transparent 0) 0 0/26px 26px,
+                linear-gradient(135deg, var(--aqua-grad-1), var(--aqua-grad-2));
+            background-attachment: fixed;
+        }
+        .error-box { max-width: 28rem; }
+        .error-code { font-size: 5rem; font-weight: 800; text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body class="aqua-flex aqua-items-center aqua-justify-center aqua-min-h-screen aqua-p-4">
+
+    <div class="aqua-glass aqua-p-8 aqua-text-center aqua-w-full aqua-flex aqua-items-center aqua-justify-center aqua-flex-col aqua-gap-6 error-box">
+
+        <div class="error-code">500</div>
+
+        <h1 class="aqua-heading-2 aqua-m-0">Internal Server Error</h1>
+
+        <p class="aqua-text-sm aqua-leading-relaxed">
+            サーバーで予期せぬエラーが発生しました。<br>一時的な問題である可能性があります。<br>後ほどお試しください。<br>URLをご確認いただくか、管理者にお問い合わせください。
         </p>
-        
-        <div class="aqua-flex aqua-flex-col aqua-gap-3 aqua-w-full">
+
+        <div class="aqua-flex aqua-flex-col aqua-gap-4 aqua-w-full">
             <a href="https://ossmxun.net/" class="aqua-btn aqua-btn-primary aqua-justify-center">
                 ホームに戻る
             </a>
