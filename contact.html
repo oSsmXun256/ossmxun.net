@@ -27,10 +27,16 @@
     <style>
         body {
             color: #fff;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
             background:
                 radial-gradient(circle at 1px 1px, rgba(255,255,255,0.18) 1px, transparent 0) 0 0/26px 26px,
                 linear-gradient(135deg, var(--aqua-grad-1), var(--aqua-grad-2));
-            background-attachment: fixed;
         }
         .home-avatar { width: 128px; height: 128px; object-fit: cover; border: 4px solid #fff; border-radius: 50%; box-shadow: var(--aqua-shadow-lg); flex-shrink: 0; }
         .link-card { text-decoration: none; color: #fff; }

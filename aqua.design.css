@@ -86,6 +86,8 @@ html, body {
     -webkit-backdrop-filter: blur(22px) saturate(1.2);
     position: relative;
     overflow: hidden;
+    contain: layout paint;
+    transform: translateZ(0);
 }
 
 .aqua-glass-light {
