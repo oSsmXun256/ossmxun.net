@@ -1,0 +1,109 @@
+/* MinaUI composition for the original centered HTTP error documents. */
+
+.mina-error-page {
+    position: relative;
+    min-width: 320px;
+    line-height: normal;
+    color: #fff;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --mina-bg: transparent;
+    --mina-fg: #fff;
+    --mina-fg-muted: rgba(255, 255, 255, 0.7);
+    --mina-font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --mina-font-display: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --mina-primary: #4e70df;
+    --mina-primary-hover: #6b8aff;
+    --mina-glass-bg: rgba(255, 255, 255, 0.1);
+    --mina-glass-bg-light: rgba(255, 255, 255, 0.16);
+    --mina-glass-border: rgba(255, 255, 255, 0.45);
+    --mina-glass-blur: 22px;
+    --mina-glass-saturate: 120%;
+    --mina-shadow-md: 0 24px 60px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    --mina-radius-xl: 12px;
+    --mina-radius-lg: 12px;
+}
+
+.mina-error-page::before {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    background:
+        radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.18) 1px, transparent 0) 0 0 / 26px 26px,
+        linear-gradient(135deg, #667eea, #9f85d6);
+}
+
+.mina-error-page .mina-error-card {
+    width: 100%;
+    max-width: 28rem;
+    flex-direction: column;
+    overflow: hidden;
+    contain: layout paint;
+    transform: translateZ(0);
+}
+
+.mina-error-page .mina-heading-2 {
+    font-size: 1.5rem;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.mina-error-code {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: normal;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.mina-error-message {
+    color: #fff;
+}
+
+.mina-error-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mina-error-actions .mina-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 0;
+    padding: 10px 16px;
+    border-radius: 12px;
+    color: #fff;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.mina-error-actions .mina-btn--primary {
+    border: 0;
+    background: #4e70df;
+    box-shadow: none;
+    font-size: 16px;
+}
+
+.mina-error-actions .mina-btn--primary:hover {
+    color: #fff;
+    background: #6b8aff;
+}
+
+.mina-error-actions .mina-btn--glass {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: none;
+    font-size: 13.3333px;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+
+.mina-error-actions .mina-btn--glass:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.16);
+}

@@ -1,65 +1,34 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-theme="dark" data-style="glass">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>401 Unauthorized</title>
 
-    <link rel="stylesheet" href="https://ossmxun.net/aqua.design.css">
-    <link rel="stylesheet" href="https://ossmxun.net/aqua.style.css">
-    <link rel="stylesheet" href="https://ossmxun.net/aqua.effect.css">
-
-    <link rel="icon" type="image/webp" href="https://ossmxun.net/img/aikon.w/n_ossm_nc.webp">
-
+    <link rel="stylesheet" href="./minaui.css">
+    <link rel="stylesheet" href="./mina-error.css">
+    <link rel="icon" type="image/webp" href="./img/aikon.w/n_ossm_nc.webp">
     <meta name="robots" content="noindex,nofollow">
-
     <meta property="og:title" content="401 Unauthorized | お刺身くん">
     <meta property="og:description" content="認証情報が不足しているか無効です。">
     <meta property="og:image" content="https://ossmxun.net/img/original/new_header.png">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="401 Unauthorized | お刺身くん">
     <meta name="twitter:description" content="認証情報が不足しているか無効です。">
     <meta name="twitter:image" content="https://ossmxun.net/img/original/new_header.png">
-
-    <style>
-        body {
-            color: #fff;
-            position: relative;
-        }
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background:
-                radial-gradient(circle at 1px 1px, rgba(255,255,255,0.18) 1px, transparent 0) 0 0/26px 26px,
-                linear-gradient(135deg, var(--aqua-grad-1), var(--aqua-grad-2));
-        }
-        .error-box { max-width: 28rem; }
-        .error-code { font-size: 5rem; font-weight: 800; text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-    </style>
 </head>
-<body class="aqua-flex aqua-items-center aqua-justify-center aqua-min-h-screen aqua-p-4">
-
-    <div class="aqua-glass aqua-p-8 aqua-text-center aqua-w-full aqua-flex aqua-items-center aqua-justify-center aqua-flex-col aqua-gap-6 error-box">
-
-        <div class="error-code">401</div>
-
-        <h1 class="aqua-heading-2 aqua-m-0">Unauthorized</h1>
-
-        <p class="aqua-text-sm aqua-leading-relaxed">
+<body class="mina-flex mina-items-center mina-justify-center mina-min-h-screen mina-p-4 mina-error-page">
+    <div class="mina-card mina-p-8 mina-text-center mina-w-full mina-flex mina-items-center mina-justify-center mina-flex-col mina-gap-6 mina-error-card">
+        <div class="mina-error-code" aria-label="HTTP 401">401</div>
+        <h1 class="mina-heading-2 mina-m-0" id="error-title">Unauthorized</h1>
+        <p class="mina-text-sm mina-leading-relaxed mina-error-message">
             認証情報が不足しているか無効です。<br>正しい認証情報を送信してください。
         </p>
-
-        <div class="aqua-flex aqua-flex-col aqua-gap-4 aqua-w-full">
-            <a href="https://ossmxun.net/" class="aqua-btn aqua-btn-primary aqua-justify-center">
-                ホームに戻る
-            </a>
-            <button onclick="history.back()" class="aqua-btn aqua-btn-glass aqua-w-full aqua-justify-center">
-                ← 前のページに戻る
-            </button>
+        <div class="mina-flex mina-flex-col mina-gap-4 mina-w-full mina-error-actions">
+            <a href="https://ossmxun.net/" class="mina-btn mina-btn--primary mina-justify-center">ホームに戻る</a>
+            <button type="button" onclick="history.back()" class="mina-btn mina-btn--glass mina-w-full mina-justify-center">← 前のページに戻る</button>
         </div>
     </div>
+    <script src="./minaui.js" defer></script>
 </body>
 </html>

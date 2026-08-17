@@ -1,0 +1,223 @@
+/*
+ * oSsmXun legacy composition on top of MinaUI.
+ *
+ * MinaUI owns the reusable glass surface, flex, typography and utility APIs.
+ * These rules retain the original glass composition and dimensions without
+ * bringing any legacy classes or variables back into the active site.
+ */
+
+.oss-legacy-page {
+    position: relative;
+    line-height: normal;
+    color: #fff;
+    background: transparent;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --mina-bg: transparent;
+    --mina-fg: #fff;
+    --mina-fg-muted: rgba(255, 255, 255, 0.7);
+    --mina-fg-subtle: rgba(255, 255, 255, 0.7);
+    --mina-font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --mina-font-display: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --mina-primary: #4e70df;
+    --mina-primary-hover: #6b8aff;
+    --mina-gradient-primary: linear-gradient(135deg, #667eea, #9f85d6);
+    --mina-glass-bg: rgba(255, 255, 255, 0.1);
+    --mina-glass-bg-light: rgba(255, 255, 255, 0.16);
+    --mina-glass-border: rgba(255, 255, 255, 0.45);
+    --mina-glass-blur: 22px;
+    --mina-glass-saturate: 120%;
+    --mina-shadow-md: 0 24px 60px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    --mina-radius-xl: 12px;
+    --mina-radius-lg: 12px;
+    --mina-radius-md: 8px;
+    --mina-surface-muted: rgba(255, 255, 255, 0.1);
+}
+
+.oss-legacy-page::before,
+.mina-error-page::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    background:
+        radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.18) 1px, transparent 0) 0 0 / 26px 26px,
+        linear-gradient(135deg, #667eea, #9f85d6);
+}
+
+.oss-legacy-page > * {
+    flex-shrink: 0;
+}
+
+.oss-legacy-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.oss-legacy-container--md {
+    max-width: 48rem;
+}
+
+.oss-legacy-container--sm {
+    max-width: 40rem;
+}
+
+.oss-legacy-container--xl {
+    max-width: 80rem;
+}
+
+.oss-legacy-header {
+    margin-bottom: 3rem;
+}
+
+.oss-legacy-profile {
+    flex-direction: row;
+    overflow: hidden;
+    contain: layout paint;
+    transform: translateZ(0);
+}
+
+.oss-legacy-page .mina-heading-1,
+.oss-legacy-page .mina-heading-2 {
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.oss-legacy-page .mina-heading-1 {
+    font-size: 2rem;
+}
+
+.oss-legacy-page .mina-heading-2 {
+    font-size: 1.5rem;
+}
+
+.oss-legacy-avatar {
+    width: 128px;
+    height: 128px;
+    flex-shrink: 0;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--mina-shadow-lg);
+}
+
+.oss-legacy-main {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.oss-legacy-link-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.oss-legacy-link-card {
+    min-width: 0;
+    flex-direction: row;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Preserve the original card rhythm while MinaUI supplies the surface. */
+.oss-legacy-main > section:first-child .oss-legacy-link-card {
+    min-height: 74px;
+}
+
+.oss-legacy-main > section:first-child .oss-legacy-link-card:last-child {
+    min-height: 75px;
+}
+
+.oss-legacy-main > section:first-child .oss-legacy-link-card:first-child {
+    min-height: 66px;
+}
+
+.oss-legacy-main > section:last-child .oss-legacy-link-card {
+    min-height: 77px;
+}
+
+.oss-legacy-link-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 auto;
+    object-fit: contain;
+}
+
+.oss-legacy-project-icon {
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.oss-legacy-project-icon--round {
+    border-radius: 50%;
+}
+
+.oss-legacy-link-label {
+    display: block;
+    overflow: hidden;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.oss-legacy-link-sub {
+    display: block;
+    overflow: hidden;
+    color: #fff;
+    font-size: 0.75rem;
+    opacity: 0.85;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.oss-legacy-footer {
+    margin-top: 6rem;
+}
+
+.oss-legacy-footer img {
+    display: block;
+    height: auto;
+}
+
+.oss-legacy-contact-main {
+    margin-bottom: 4rem;
+}
+
+.oss-legacy-contact-grid {
+    grid-template-columns: 1fr;
+}
+
+.oss-legacy-contact-page .oss-legacy-link-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.oss-legacy-contact-grid .oss-legacy-link-card {
+    min-height: 78px;
+}
+
+.oss-legacy-contact-grid .oss-legacy-link-card:nth-child(2) {
+    min-height: 81px;
+}
+
+@media (max-width: 768px) {
+    .oss-legacy-profile {
+        flex-direction: column !important;
+    }
+
+    .oss-legacy-main > section:last-child .oss-legacy-link-card:first-child,
+    .oss-legacy-main > section:last-child .oss-legacy-link-card:last-child {
+        min-height: 75px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mina-hover-grow,
+    .mina-hover-grow:hover {
+        transform: none;
+    }
+}

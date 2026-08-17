@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-theme="dark" data-style="glass">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>お刺身くん | oSsmXun</title>
 
-    <link rel="stylesheet" href="aqua.design.css">
-    <link rel="stylesheet" href="aqua.style.css">
-    <link rel="stylesheet" href="aqua.effect.css">
-
-    <link rel="icon" type="image/webp" href="https://ossmxun.net/img/aikon.w/n_ossm_nc.webp">
+    <link rel="stylesheet" href="./minaui.css">
+    <link rel="stylesheet" href="./mina-site.css">
+    <link rel="icon" type="image/webp" href="./img/aikon.w/n_ossm_nc.webp">
     <link rel="canonical" href="https://ossmxun.net/">
 
     <meta name="google" content="nositelinkssearchbox">
     <meta name="googlebot" content="notranslate">
     <meta name="google" content="nopagereadaloud">
-
     <meta name="description" content="プログラミングやゲームなどをしているお刺身くんのホームページです。">
     <meta name="keywords" content="お刺身くん,お刺身,oSsmXun,ossmxun,oSsm,Xun,LakeLine,Lakeline,lakeline,lake,line,fms_spica,fms,spica,ホームページ,ウェブサイト,homepage,website">
     <meta name="author" content="© 2026 oSsmXun. All Rights Reserved.">
@@ -27,42 +24,20 @@
     <meta property="og:site_name" content="お刺身くん | oSsmXun">
     <meta property="og:description" content="プログラミングやゲームなどをしているお刺身くんのホームページです。">
     <meta property="og:locale" content="ja_JP">
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="お刺身くん | oSsmXun" />
-    <meta name="twitter:description" content="プログラミングやゲームなどをしているお刺身くんのホームページです。" />
-    <meta name="twitter:image" content="https://ossmxun.net/img/original/new_header.png" />
-
-    <style>
-        body {
-            color: #fff;
-            position: relative;
-        }
-        body::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            background:
-                radial-gradient(circle at 1px 1px, rgba(255,255,255,0.18) 1px, transparent 0) 0 0/26px 26px,
-                linear-gradient(135deg, var(--aqua-grad-1), var(--aqua-grad-2));
-        }
-        .home-avatar { width: 128px; height: 128px; object-fit: cover; border: 4px solid #fff; border-radius: 50%; box-shadow: var(--aqua-shadow-lg); flex-shrink: 0; }
-        .link-card { text-decoration: none; color: #fff; }
-        .link-icon { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; }
-        .link-label { font-size: 0.875rem; font-weight: 700; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .link-sub { font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0.85; }
-    </style>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="お刺身くん | oSsmXun">
+    <meta name="twitter:description" content="プログラミングやゲームなどをしているお刺身くんのホームページです。">
+    <meta name="twitter:image" content="https://ossmxun.net/img/original/new_header.png">
 </head>
-<body class="aqua-flex aqua-flex-col aqua-items-center aqua-min-h-screen aqua-py-8">
+<body class="mina-flex mina-flex-col mina-items-center mina-min-h-screen mina-py-8 oss-legacy-page">
 
-    <header class="aqua-container aqua-container-md aqua-w-full aqua-px-4" style="margin-bottom: 3rem;">
-        <div class="aqua-glass aqua-p-8 aqua-flex aqua-md:flex-col aqua-items-center aqua-justify-center aqua-gap-8 aqua-text-center">
-            <img class="home-avatar" alt="お刺身くん" src="./img/aikon.w/n_aikon_t.webp">
+    <header class="mina-container mina-w-full mina-px-4 oss-legacy-container oss-legacy-container--md oss-legacy-header">
+        <div class="mina-card mina-p-8 mina-flex mina-flex-row mina-items-center mina-justify-center mina-gap-8 mina-text-center oss-legacy-profile">
+            <img class="mina-avatar oss-legacy-avatar" alt="お刺身くん" src="./img/aikon.w/n_aikon_t.webp">
 
             <div>
-                <h1 class="aqua-heading-1 aqua-my-4">お刺身くん / oSsmXun</h1>
-                <p class="aqua-leading-relaxed aqua-text-sm">
+                <h1 class="mina-heading-1 mina-my-4">お刺身くん / oSsmXun</h1>
+                <p class="mina-leading-relaxed mina-text-sm">
                     趣味でプログラミングしてる学生。<br>
                     アニメが大好きなゲーム廃人。<br>
                     シエスタは俺の嫁。
@@ -71,117 +46,117 @@
         </div>
     </header>
 
-    <main class="aqua-container aqua-container-xl aqua-grid aqua-grid-2 aqua-w-full" style="margin-bottom: 4rem;">
+    <main class="mina-container mina-w-full mina-px-4 mina-grid oss-legacy-container oss-legacy-container--xl oss-legacy-main">
+        <section class="mina-w-full">
+            <h2 class="mina-heading-2 mina-text-center mina-my-4">Accounts</h2>
 
-        <section class="aqua-w-full">
-            <h2 class="aqua-heading-2 aqua-text-center aqua-my-4">Accounts</h2>
-
-            <div class="aqua-grid aqua-grid-3">
-                <a href="./contact.html" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
-                    <img alt="Contact" class="link-icon" src="./img/home.w/e-mail.webp">
-                    <span class="link-label">Contact</span>
+            <div class="mina-grid oss-legacy-link-grid">
+                <a href="./contact.html" class="mina-card mina-p-4 mina-flex mina-flex-row mina-items-center mina-gap-4 mina-text-white mina-hover-grow oss-legacy-link-card">
+                    <img alt="Contact" class="mina-icon oss-legacy-link-icon" src="./img/home.w/e-mail.webp">
+                    <span class="oss-legacy-link-label">Contact</span>
                 </a>
 
-                <a href="https://www.youtube.com/channel/UCQ-7PqL5qKKCc2W2w8dXtnw" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
-                    <img alt="YouTube" class="link-icon" src="./img/home.w/youtube.webp">
+                <a href="https://www.youtube.com/channel/UCQ-7PqL5qKKCc2W2w8dXtnw" class="mina-card mina-p-4 mina-flex mina-flex-row mina-items-center mina-gap-4 mina-text-white mina-hover-grow oss-legacy-link-card">
+                    <img alt="YouTube" class="mina-icon oss-legacy-link-icon" src="./img/home.w/youtube.webp">
                     <div>
-                        <span class="link-label">Youtube</span>
-                        <span class="link-sub">@oSsmXun</span>
+                        <span class="oss-legacy-link-label">Youtube</span>
+                        <span class="oss-legacy-link-sub">@oSsmXun</span>
                     </div>
                 </a>
 
-                <a href="https://x.com/oSsmXun" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
-                    <img alt="X" class="link-icon" src="./img/home.w/x.webp">
+                <a href="https://x.com/oSsmXun" class="mina-card mina-p-4 mina-flex mina-flex-row mina-items-center mina-gap-4 mina-text-white mina-hover-grow oss-legacy-link-card">
+                    <img alt="X" class="mina-icon oss-legacy-link-icon" src="./img/home.w/x.webp">
                     <div>
-                        <span class="link-label">X</span>
-                        <span class="link-sub">@oSsmXun</span>
+                        <span class="oss-legacy-link-label">X</span>
+                        <span class="oss-legacy-link-sub">@oSsmXun</span>
                     </div>
                 </a>
 
-                <a href="https://bsky.app/profile/ossmxun.net" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
-                    <img alt="BlueSky" class="link-icon" src="./img/home.w/bluesky.webp">
+                <a href="https://bsky.app/profile/ossmxun.net" class="mina-card mina-p-4 mina-flex mina-flex-row mina-items-center mina-gap-4 mina-text-white mina-hover-grow oss-legacy-link-card">
+                    <img alt="BlueSky" class="mina-icon oss-legacy-link-icon" src="./img/home.w/bluesky.webp">
                     <div>
-                        <span class="link-label">Bluesky</span>
-                        <span class="link-sub">@ossmxun.net</span>
+                        <span class="oss-legacy-link-label">Bluesky</span>
+                        <span class="oss-legacy-link-sub">@ossmxun.net</span>
                     </div>
                 </a>
 
-                <a href="https://misskey.io/@oSsmXun" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
-                    <img alt="Misskey" class="link-icon" src="./img/home.w/misskey.webp">
+                <a href="https://misskey.io/@oSsmXun" class="mina-card mina-p-4 mina-flex mina-flex-row mina-items-center mina-gap-4 mina-text-white mina-hover-grow oss-legacy-link-card">
+                    <img alt="Misskey" class="mina-icon oss-legacy-link-icon" src="./img/home.w/misskey.webp">
                     <div>
-                        <span class="link-label">Misskey</span>
-                        <span class="link-sub">@oSsmXun</span>
+                        <span class="oss-legacy-link-label">Misskey</span>
+                        <span class="oss-legacy-link-sub">@oSsmXun</span>
                     </div>
                 </a>
 
-                <a href="https://github.com/oSsmXun256/" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
-                    <img alt="Github" class="link-icon" src="./img/home.w/github.webp">
+                <a href="https://github.com/oSsmXun256/" class="mina-card mina-p-4 mina-flex mina-flex-row mina-items-center mina-gap-4 mina-text-white mina-hover-grow oss-legacy-link-card">
+                    <img alt="Github" class="mina-icon oss-legacy-link-icon" src="./img/home.w/github.webp">
                     <div>
-                        <span class="link-label">Github</span>
-                        <span class="link-sub">oSsmXun256</span>
+                        <span class="oss-legacy-link-label">Github</span>
+                        <span class="oss-legacy-link-sub">oSsmXun256</span>
                     </div>
                 </a>
 
-                <a href="https://xu.f5.si/discord" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
-                    <img alt="Discord" class="link-icon" src="./img/home.w/discord.webp">
+                <a href="https://xu.f5.si/discord" class="mina-card mina-p-4 mina-flex mina-flex-row mina-items-center mina-gap-4 mina-text-white mina-hover-grow oss-legacy-link-card">
+                    <img alt="Discord" class="mina-icon oss-legacy-link-icon" src="./img/home.w/discord.webp">
                     <div>
-                        <span class="link-label">Discord</span>
-                        <span class="link-sub">ossmxun</span>
+                        <span class="oss-legacy-link-label">Discord</span>
+                        <span class="oss-legacy-link-sub">ossmxun</span>
                     </div>
                 </a>
 
-                <a href="https://vrc.ossmxun.net/" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
-                    <img alt="VRChat" class="link-icon" src="./img/home.w/vrc.webp">
+                <a href="https://vrc.ossmxun.net/" class="mina-card mina-p-4 mina-flex mina-flex-row mina-items-center mina-gap-4 mina-text-white mina-hover-grow oss-legacy-link-card">
+                    <img alt="VRChat" class="mina-icon oss-legacy-link-icon" src="./img/home.w/vrc.webp">
                     <div>
-                        <span class="link-label">VRChat</span>
-                        <span class="link-sub">お刺身くん</span>
+                        <span class="oss-legacy-link-label">VRChat</span>
+                        <span class="oss-legacy-link-sub">お刺身くん</span>
                     </div>
                 </a>
             </div>
         </section>
 
-        <section class="aqua-w-full">
-            <h2 class="aqua-heading-2 aqua-text-center aqua-my-4">Projects</h2>
+        <section class="mina-w-full">
+            <h2 class="mina-heading-2 mina-text-center mina-my-4">Projects</h2>
 
-            <div class="aqua-grid aqua-grid-3">
-                <a href="https://dashboard.ossmxun.net/" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
-                    <img alt="Dashboard" class="link-icon aqua-rounded-full" style="object-fit: cover;" src="./img/aikon.w/n_ossm_nc.webp">
+            <div class="mina-grid oss-legacy-link-grid">
+                <a href="https://dashboard.ossmxun.net/" class="mina-card mina-p-4 mina-flex mina-flex-row mina-items-center mina-gap-4 mina-text-white mina-hover-grow oss-legacy-link-card">
+                    <img alt="Dashboard" class="mina-icon oss-legacy-link-icon oss-legacy-project-icon oss-legacy-project-icon--round" src="./img/aikon.w/n_ossm_nc.webp">
                     <div>
-                        <span class="link-label">oSsmXun Dashboard</span>
-                        <span class="link-sub">ダッシュボード</span>
+                        <span class="oss-legacy-link-label">oSsmXun Dashboard</span>
+                        <span class="oss-legacy-link-sub">ダッシュボード</span>
                     </div>
                 </a>
 
-                <a href="https://app.ossmxun.net/honoka/" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
-                    <img alt="Honoka" class="link-icon aqua-rounded" style="object-fit: cover;" src="./img/home.w/honoka.webp">
+                <a href="https://app.ossmxun.net/honoka/" class="mina-card mina-p-4 mina-flex mina-flex-row mina-items-center mina-gap-4 mina-text-white mina-hover-grow oss-legacy-link-card">
+                    <img alt="Honoka" class="mina-icon oss-legacy-link-icon oss-legacy-project-icon" src="./img/home.w/honoka.webp">
                     <div>
-                        <span class="link-label">穂乃花/Honoka</span>
-                        <span class="link-sub">多機能Bot</span>
+                        <span class="oss-legacy-link-label">穂乃花/Honoka</span>
+                        <span class="oss-legacy-link-sub">多機能Bot</span>
                     </div>
                 </a>
 
-                <a href="https://app.ossmxun.net/kanon/" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
-                    <img alt="Kanon" class="link-icon aqua-rounded" style="object-fit: cover;" src="./img/home.w/kanon.webp">
+                <a href="https://app.ossmxun.net/kanon/" class="mina-card mina-p-4 mina-flex mina-flex-row mina-items-center mina-gap-4 mina-text-white mina-hover-grow oss-legacy-link-card">
+                    <img alt="Kanon" class="mina-icon oss-legacy-link-icon oss-legacy-project-icon" src="./img/home.w/kanon.webp">
                     <div>
-                        <span class="link-label">奏音/Kanon</span>
-                        <span class="link-sub">音楽Bot</span>
+                        <span class="oss-legacy-link-label">奏音/Kanon</span>
+                        <span class="oss-legacy-link-sub">音楽Bot</span>
                     </div>
                 </a>
 
-                <a href="https://app.ossmxun.net/notify/" class="aqua-glass aqua-p-4 aqua-flex aqua-items-center aqua-gap-4 aqua-text-white aqua-hover-grow link-card">
-                    <img alt="Notify" class="link-icon aqua-rounded" style="object-fit: cover;" src="./img/home.w/notify.webp">
+                <a href="https://app.ossmxun.net/notify/" class="mina-card mina-p-4 mina-flex mina-flex-row mina-items-center mina-gap-4 mina-text-white mina-hover-grow oss-legacy-link-card">
+                    <img alt="Notify" class="mina-icon oss-legacy-link-icon oss-legacy-project-icon" src="./img/home.w/notify.webp">
                     <div>
-                        <span class="link-label">Notify</span>
-                        <span class="link-sub">通知Bot</span>
+                        <span class="oss-legacy-link-label">Notify</span>
+                        <span class="oss-legacy-link-sub">通知Bot</span>
                     </div>
                 </a>
             </div>
         </section>
     </main>
 
-    <footer class="aqua-w-full aqua-overflow-hidden aqua-flex aqua-justify-center aqua-items-end" style="margin-top: 6rem;">
-        <img src="./img/original/bottom.png" alt="Footer Image" class="aqua-w-full" style="display: block; height: auto;">
+    <footer class="mina-w-full mina-overflow-hidden mina-flex mina-justify-center mina-items-end oss-legacy-footer">
+        <img src="./img/original/bottom.png" alt="Footer Image" class="mina-w-full">
     </footer>
 
+    <script src="./minaui.js" defer></script>
 </body>
 </html>
