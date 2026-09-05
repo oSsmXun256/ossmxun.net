@@ -1,13 +1,13 @@
 /*
- * oSsmXun legacy composition on top of MinaUI.
+ * oSsmXun's original layout, updated to use MinaUI v0.2.0.
  *
- * MinaUI owns the reusable glass surface, flex, typography and utility APIs.
- * These rules retain the original glass composition and dimensions without
- * bringing any legacy classes or variables back into the active site.
+ * MinaUI owns the reusable surface, flex, typography and utility APIs.
+ * These rules retain the original layout and dimensions.
  */
 
 .oss-legacy-page {
     position: relative;
+    isolation: isolate;
     line-height: normal;
     color: #fff;
     background: transparent;
@@ -24,8 +24,7 @@
     --mina-glass-bg: rgba(255, 255, 255, 0.1);
     --mina-glass-bg-light: rgba(255, 255, 255, 0.16);
     --mina-glass-border: rgba(255, 255, 255, 0.45);
-    --mina-glass-blur: 22px;
-    --mina-glass-saturate: 120%;
+    --mina-card-bg: rgba(255, 255, 255, 0.12);
     --mina-shadow-md: 0 24px 60px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);
     --mina-radius-xl: 12px;
     --mina-radius-lg: 12px;
@@ -33,12 +32,14 @@
     --mina-surface-muted: rgba(255, 255, 255, 0.1);
 }
 
+/* Keep the original patterned purple backdrop while using MinaUI's layer token. */
 .oss-legacy-page::before,
 .mina-error-page::before {
     position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: var(--mina-z-backdrop);
     content: "";
+    pointer-events: none;
     background:
         radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.18) 1px, transparent 0) 0 0 / 26px 26px,
         linear-gradient(135deg, #667eea, #9f85d6);
@@ -76,8 +77,6 @@
 .oss-legacy-profile {
     flex-direction: row;
     overflow: hidden;
-    contain: layout paint;
-    transform: translateZ(0);
 }
 
 .oss-legacy-page .mina-heading-1,
@@ -180,6 +179,7 @@
 
 .oss-legacy-footer img {
     display: block;
+    width: 100%;
     height: auto;
 }
 

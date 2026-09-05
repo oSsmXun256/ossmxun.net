@@ -1,6 +1,6 @@
 # oSsmXun / ossmxun.net
 
-お刺身くんのホームページです。Accounts、Projects、ContactをMinaUIのガラスコンポーネントで構成しています。
+お刺身くんのホームページです。MinaUI v0.2.0のカードとレイアウトだけで、Accounts、Projects、Contactをシンプルに構成しています。
 
 ## Local preview
 
@@ -10,4 +10,4 @@
 python -m http.server 8000
 ```
 
-`minaui.css` / `minaui.js` はMinaUIの配布ファイル、`mina-site.css` / `mina-error.css` はこのサイト固有のレイアウトです。
+`minaui.css` / `minaui.js` はMinaUI v0.2.0の配布ファイル、`mina-site.css` / `mina-error.css` はこのサイト固有のレイアウトです。`minaui.glass.js` と `minaui-aqua-compat.css` は必要なページだけで使えるオプションです。

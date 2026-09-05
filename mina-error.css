@@ -1,10 +1,12 @@
-/* MinaUI composition for the original centered HTTP error documents. */
+/* MinaUI v0.2.0 composition for the original centered HTTP error documents. */
 
 .mina-error-page {
     position: relative;
+    isolation: isolate;
     min-width: 320px;
     line-height: normal;
     color: #fff;
+    background: transparent;
     font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --mina-bg: transparent;
     --mina-fg: #fff;
@@ -16,8 +18,7 @@
     --mina-glass-bg: rgba(255, 255, 255, 0.1);
     --mina-glass-bg-light: rgba(255, 255, 255, 0.16);
     --mina-glass-border: rgba(255, 255, 255, 0.45);
-    --mina-glass-blur: 22px;
-    --mina-glass-saturate: 120%;
+    --mina-card-bg: rgba(255, 255, 255, 0.12);
     --mina-shadow-md: 0 24px 60px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);
     --mina-radius-xl: 12px;
     --mina-radius-lg: 12px;
@@ -26,8 +27,9 @@
 .mina-error-page::before {
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: var(--mina-z-backdrop);
     content: "";
+    pointer-events: none;
     background:
         radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.18) 1px, transparent 0) 0 0 / 26px 26px,
         linear-gradient(135deg, #667eea, #9f85d6);
@@ -38,8 +40,6 @@
     max-width: 28rem;
     flex-direction: column;
     overflow: hidden;
-    contain: layout paint;
-    transform: translateZ(0);
 }
 
 .mina-error-page .mina-heading-2 {
